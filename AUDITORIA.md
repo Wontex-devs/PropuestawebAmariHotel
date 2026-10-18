@@ -225,7 +225,7 @@ Inventario completo: `docs/inventario-imagenes.csv` (80 archivos base).
 |---|---|---|
 | 1 | Material del cliente (manual de marca) | 3 (logos y favicon) |
 | 2 | Publicado por el hotel en su web oficial; autor o licencia sin documentar | 69 fotos del hotel, más `og-image` e IvyMode. También la foto de Selah Bistró & Café tomada de su Instagram (falta su autorización escrita) |
-| 3 | Tercero con licencia libre verificada y atribución | 26 fotos de Barranquilla en galerías por lugar (Wikimedia Commons: CC BY-SA 4.0, CC BY 3.0, CC0, dominio público), cada una con autor, licencia y enlace; datos en `docs/fotos-barranquilla.json`. Además, Karla (OFL) |
+| 3 | Tercero con licencia libre verificada y atribución | 36 fotos en las galerías de «Conoce Barranquilla» (9 lugares × 4): Wikimedia Commons (CC BY-SA, CC BY, CC0, dominio público), Pexels y Unsplash (sus licencias permiten uso comercial gratuito). Cada foto muestra autor y licencia con enlace; datos en `docs/fotos-barranquilla.json`. Además, Karla (OFL) |
 | 4 | Origen desconocido, no usar | 0 |
 
 Acciones:

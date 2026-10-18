@@ -272,7 +272,7 @@ def page(d, here, alt_here, wa_href, extra_head_ld=''):
     <link rel="stylesheet" href="{prefix}src/styles/base.css" />
     <link rel="stylesheet" href="{prefix}src/styles/components.css?v=2" />
     <link rel="stylesheet" href="{prefix}src/styles/sections.css?v=6" />
-    <link rel="stylesheet" href="{prefix}src/styles/extras.css?v=7" />
+    <link rel="stylesheet" href="{prefix}src/styles/extras.css?v=8" />
     <link rel="stylesheet" href="{prefix}src/styles/policies.css?v=2" />
     <script type="application/ld+json">
       {crumb}

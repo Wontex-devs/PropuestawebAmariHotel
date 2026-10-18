@@ -3,7 +3,20 @@
   "photos": [
    {
     "file": "malecon-1.jpg",
-    "commons": "File:Jardín del Río Gran Malecón Barranquilla 2026-07-30-3.jpg",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/aerial-view-of-magdalena-river-in-barranquilla-colombia-30937558/",
+    "artist": "Carlos Mendoza",
+    "license": "Licencia de Pexels",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "w": 506,
+    "h": 900,
+    "alt": "Vista aérea con dron del Gran Malecón junto al río Magdalena",
+    "alt_en": "Drone view of the Gran Malecón along the Magdalena River",
+    "pos": "50% 12%"
+   },
+   {
+    "file": "malecon-2.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Jard%C3%ADn_del_R%C3%ADo_Gran_Malec%C3%B3n_Barranquilla_2026-07-30-3.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -14,8 +27,20 @@
     "alt_en": "Sunset at the Jardín del Río in the Gran Malecón, with boats and flags"
    },
    {
-    "file": "malecon-2.jpg",
-    "commons": "File:Jardín del Río Gran Malecón Barranquilla 2026-07-30-1.jpg",
+    "file": "malecon-3.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Caiman_del_R%C3%ADo.jpg",
+    "artist": "IAmJesusDavid",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "w": 900,
+    "h": 600,
+    "alt": "Escultura Caimán del Río en el Gran Malecón",
+    "alt_en": "Caimán del Río sculpture on the Gran Malecón"
+   },
+   {
+    "file": "malecon-4.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Jard%C3%ADn_del_R%C3%ADo_Gran_Malec%C3%B3n_Barranquilla_2026-07-30-1.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -24,30 +49,6 @@
     "h": 900,
     "alt": "Cielo rosado al atardecer sobre los jardines del Gran Malecón",
     "alt_en": "Pink sunset sky over the Gran Malecón gardens"
-   },
-   {
-    "file": "malecon-3.jpg",
-    "commons": "File:Caiman del Río.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Caiman_del_R%C3%ADo.jpg",
-    "artist": "IAmJesusDavid",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "w": 900,
-    "h": 599,
-    "alt": "Escultura Caimán del Río en el Gran Malecón",
-    "alt_en": "Caimán del Río sculpture on the Gran Malecón"
-   },
-   {
-    "file": "malecon-4.jpg",
-    "commons": "File:GranMalecon2.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:GranMalecon2.jpg",
-    "artist": "Jdvillalobos",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "w": 900,
-    "h": 675,
-    "alt": "Senderos y jardines junto al río Magdalena en el Gran Malecón",
-    "alt_en": "Paths and gardens by the Magdalena River on the Gran Malecón"
    }
   ]
  },
@@ -55,7 +56,43 @@
   "photos": [
    {
     "file": "luna-1.jpg",
-    "commons": "File:Noria Luna del Río Malecón Barranquilla 2026-06-20.jpg",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/ferris-wheel-at-sunset-in-barranquilla-colombia-38151384/",
+    "artist": "Juan Camilo Trujillo Botero",
+    "license": "Licencia de Pexels",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "w": 900,
+    "h": 600,
+    "alt": "La Luna del Río junto al río Magdalena al atardecer",
+    "alt_en": "Luna del Río beside the Magdalena River at sunset"
+   },
+   {
+    "file": "luna-2.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Carrusel_malec%C3%B3n_Barranquilla_2026-06-20.jpg",
+    "artist": "Jdvillalobos",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "w": 675,
+    "h": 900,
+    "alt": "Carrusel del Gran Malecón con la Luna del Río al fondo",
+    "alt_en": "Gran Malecón carousel with Luna del Río in the background"
+   },
+   {
+    "file": "luna-3.jpg",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/sunset-over-barranquilla-ferris-wheel-and-palm-tree-38151405/",
+    "artist": "Juan Camilo Trujillo Botero",
+    "license": "Licencia de Pexels",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "w": 600,
+    "h": 900,
+    "alt": "Palmera y Luna del Río al caer el sol",
+    "alt_en": "Palm tree and Luna del Río at sunset"
+   },
+   {
+    "file": "luna-4.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Noria_Luna_del_R%C3%ADo_Malec%C3%B3n_Barranquilla_2026-06-20.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -71,7 +108,19 @@
   "photos": [
    {
     "file": "campeones-1.jpg",
-    "commons": "File:Iluminación azul Ventana de Campeones Barranquilla 2026-07-30.jpg",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/a-purple-monument-14587109/",
+    "artist": "Luis Mendez",
+    "license": "Licencia de Pexels",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "w": 900,
+    "h": 675,
+    "alt": "Vista aérea nocturna de la Ventana de Campeones iluminada",
+    "alt_en": "Night aerial view of the illuminated Ventana de Campeones"
+   },
+   {
+    "file": "campeones-2.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Iluminaci%C3%B3n_azul_Ventana_de_Campeones_Barranquilla_2026-07-30.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -82,8 +131,20 @@
     "alt_en": "Ventana de Campeones lit in blue at sunset"
    },
    {
-    "file": "campeones-2.jpg",
-    "commons": "File:Iluminación roja Ventana de Campeones Barranquilla 2026-07-30.jpg",
+    "file": "campeones-3.jpg",
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/_W_O8CbkTig",
+    "artist": "Fernando Triviño",
+    "license": "Licencia de Unsplash",
+    "licenseUrl": "https://unsplash.com/license",
+    "w": 600,
+    "h": 900,
+    "alt": "Ventana de Campeones bajo el cielo azul",
+    "alt_en": "Ventana de Campeones under a blue sky"
+   },
+   {
+    "file": "campeones-4.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Iluminaci%C3%B3n_roja_Ventana_de_Campeones_Barranquilla_2026-07-30.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -92,18 +153,6 @@
     "h": 900,
     "alt": "Ventana de Campeones iluminada de rojo al atardecer",
     "alt_en": "Ventana de Campeones lit in red at sunset"
-   },
-   {
-    "file": "campeones-3.jpg",
-    "commons": "File:Ventana de Campeones.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Ventana_de_Campeones.jpg",
-    "artist": "IAmJesusDavid",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "w": 599,
-    "h": 900,
-    "alt": "Monumento de vidrio Ventana de Campeones",
-    "alt_en": "Ventana de Campeones glass monument"
    }
   ]
  },
@@ -111,20 +160,20 @@
   "photos": [
    {
     "file": "ventana-1.jpg",
-    "commons": "File:Ventana al mundo.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Ventana_al_mundo.jpg",
     "artist": "Purrego",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "w": 505,
+    "w": 506,
     "h": 900,
     "alt": "Ventana al Mundo bajo el cielo azul",
     "alt_en": "Ventana al Mundo under a blue sky"
    },
    {
     "file": "ventana-2.jpg",
-    "commons": "File:HitoVentana1.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:HitoVentana1.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Ventanalmundo.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
@@ -135,15 +184,27 @@
    },
    {
     "file": "ventana-3.jpg",
-    "commons": "File:Ventana al Mundo.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Ventana_al_Mundo.jpg",
     "artist": "IAmJesusDavid",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "w": 505,
+    "w": 506,
     "h": 900,
     "alt": "Detalle de los colores de la Ventana al Mundo",
     "alt_en": "Detail of the colors of Ventana al Mundo"
+   },
+   {
+    "file": "ventana-4.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:HitoVentana2.jpg",
+    "artist": "Jdvillalobos",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "w": 900,
+    "h": 675,
+    "alt": "Paneles con la historia de Barranquilla en la base de la Ventana al Mundo",
+    "alt_en": "Panels on the history of Barranquilla at the base of Ventana al Mundo"
    }
   ]
  },
@@ -151,7 +212,7 @@
   "photos": [
    {
     "file": "carnaval-1.jpg",
-    "commons": "File:Museo del carnaval de Barranquilla.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Museo_del_carnaval_de_Barranquilla.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -163,7 +224,7 @@
    },
    {
     "file": "carnaval-2.jpg",
-    "commons": "File:Museo carnaval de Barranquilla.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Museo_carnaval_de_Barranquilla.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -175,7 +236,7 @@
    },
    {
     "file": "carnaval-3.jpg",
-    "commons": "File:Casa del Carnaval Barranquilla 2024-08-17.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Casa_del_Carnaval_Barranquilla_2024-08-17.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -187,7 +248,7 @@
    },
    {
     "file": "carnaval-4.jpg",
-    "commons": "File:Barranquilla interior casa del carnaval.jpg",
+    "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Barranquilla_interior_casa_del_carnaval.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY 3.0",
@@ -203,51 +264,103 @@
   "photos": [
    {
     "file": "mallorquin-1.jpg",
-    "commons": "File:SenderoEstuarioEcoparqueMallorquinBarranquilla.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:SenderoEstuarioEcoparqueMallorquinBarranquilla.jpg",
-    "artist": "Jdvillalobos",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/aerial-view-of-eco-park-in-barranquilla-colombia-30937505/",
+    "artist": "Carlos Mendoza",
+    "license": "Licencia de Pexels",
+    "licenseUrl": "https://www.pexels.com/license/",
     "w": 900,
-    "h": 675,
-    "alt": "Muelle de madera sobre la Ciénaga de Mallorquín",
-    "alt_en": "Wooden boardwalk over the Ciénaga de Mallorquín"
+    "h": 506,
+    "alt": "Vista aérea con dron del muelle del Ecoparque Ciénaga de Mallorquín",
+    "alt_en": "Drone view of the Ecoparque Ciénaga de Mallorquín boardwalk"
    },
    {
     "file": "mallorquin-2.jpg",
-    "commons": "File:Paisaje Ciénaga de Mallorquín.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Paisaje_Ci%C3%A9naga_de_Mallorqu%C3%ADn.jpg",
-    "artist": "Project5443",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "w": 675,
+    "source": "Unsplash",
+    "page": "https://unsplash.com/photos/rJxh1YU2Azs",
+    "artist": "Edwin Sarmiento",
+    "license": "Licencia de Unsplash",
+    "licenseUrl": "https://unsplash.com/license",
+    "w": 600,
     "h": 900,
-    "alt": "Paisaje de la Ciénaga de Mallorquín con su muelle",
-    "alt_en": "Ciénaga de Mallorquín landscape with its pier"
+    "alt": "Muelle del ecoparque sobre la ciénaga al atardecer",
+    "alt_en": "Eco-park pier over the swamp at sunset"
    },
    {
     "file": "mallorquin-3.jpg",
-    "commons": "File:SenderoManglarEcoparqueMallorquinBarranquilla.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:SenderoManglarEcoparqueMallorquinBarranquilla.jpg",
-    "artist": "Jdvillalobos",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "w": 900,
-    "h": 675,
-    "alt": "Sendero de madera entre el manglar del ecoparque",
-    "alt_en": "Wooden path through the eco-park mangroves"
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/aerial-view-of-scenic-marshlands-in-colombia-30937529/",
+    "artist": "Carlos Mendoza",
+    "license": "Licencia de Pexels",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "w": 506,
+    "h": 900,
+    "alt": "Atardecer sobre la Ciénaga de Mallorquín visto desde el aire",
+    "alt_en": "Sunset over the Ciénaga de Mallorquín seen from the air"
    },
    {
     "file": "mallorquin-4.jpg",
-    "commons": "File:FaunaEcoparqueCienagadeMallorquinBarranquilla.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:FaunaEcoparqueCienagadeMallorquinBarranquilla.jpg",
-    "artist": "Jdvillalobos",
+    "source": "Pexels",
+    "page": "https://www.pexels.com/photo/aerial-view-of-mangrove-forest-in-barranquilla-30937528/",
+    "artist": "Carlos Mendoza",
+    "license": "Licencia de Pexels",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "w": 506,
+    "h": 900,
+    "alt": "Manglar y sendero de madera del ecoparque desde el aire",
+    "alt_en": "Aerial view of the eco-park mangroves and wooden path"
+   }
+  ]
+ },
+ "puertomocho": {
+  "photos": [
+   {
+    "file": "puertomocho-1.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Puerto_Mocho,_Barranquilla.jpg",
+    "artist": "Jair Varela",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "w": 900,
+    "h": 506,
+    "alt": "Vista aérea de la playa Puerto Mocho con sus carpas frente al mar",
+    "alt_en": "Aerial view of Puerto Mocho beach with its tents by the sea"
+   },
+   {
+    "file": "puertomocho-2.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Boca_de_Ceniza.jpg",
+    "artist": "Jestrada17",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "w": 900,
     "h": 675,
-    "alt": "Garza entre los manglares de la ciénaga",
-    "alt_en": "Heron among the swamp mangroves"
+    "alt": "Botes de pescadores en Bocas de Ceniza, cerca de Puerto Mocho",
+    "alt_en": "Fishing boats at Bocas de Ceniza, near Puerto Mocho"
+   },
+   {
+    "file": "puertomocho-3.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Bocas_de_cenizas_via_tren.JPG",
+    "artist": "MirfakVelez_92",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "w": 900,
+    "h": 675,
+    "alt": "Vía del tren sobre el tajamar hacia Bocas de Ceniza",
+    "alt_en": "Railway on the breakwater towards Bocas de Ceniza"
+   },
+   {
+    "file": "puertomocho-4.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Bocas_de_ceniza_Barranquilla.jpg",
+    "artist": "Cathetovar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "w": 675,
+    "h": 900,
+    "alt": "Sendero sobre el tajamar, entre el río Magdalena y el mar",
+    "alt_en": "Path along the breakwater, between the Magdalena River and the sea"
    }
   ]
  },
@@ -255,7 +368,6 @@
   "photos": [
    {
     "file": "caribe-1.jpg",
-    "commons": "File:Barranquilla - Parque Cultural del Caribe.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Barranquilla_-_Parque_Cultural_del_Caribe.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY 3.0",
@@ -263,11 +375,11 @@
     "w": 900,
     "h": 675,
     "alt": "Edificio del Museo del Caribe en el Parque Cultural del Caribe",
-    "alt_en": "Museo del Caribe building in the Parque Cultural del Caribe"
+    "alt_en": "Museo del Caribe building in the Parque Cultural del Caribe",
+    "source": "Wikimedia Commons"
    },
    {
     "file": "caribe-2.jpg",
-    "commons": "File:Parque Cultural del Caribe - Barranquilla.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Parque_Cultural_del_Caribe_-_Barranquilla.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY 3.0",
@@ -275,11 +387,11 @@
     "w": 900,
     "h": 675,
     "alt": "Museo del Caribe rodeado de jardines",
-    "alt_en": "Museo del Caribe surrounded by gardens"
+    "alt_en": "Museo del Caribe surrounded by gardens",
+    "source": "Wikimedia Commons"
    },
    {
     "file": "caribe-3.jpg",
-    "commons": "File:Facade of Museo del Caribe at Barranquilla Colombia.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Facade_of_Museo_del_Caribe_at_Barranquilla_Colombia.jpg",
     "artist": "Oliver H",
     "license": "CC BY-SA 4.0",
@@ -287,11 +399,11 @@
     "w": 800,
     "h": 900,
     "alt": "Fachada del Museo del Caribe",
-    "alt_en": "Facade of the Museo del Caribe"
+    "alt_en": "Facade of the Museo del Caribe",
+    "source": "Wikimedia Commons"
    },
    {
     "file": "caribe-4.jpg",
-    "commons": "File:Vista de la ciudad en el Parque Cultural.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Vista_de_la_ciudad_en_el_Parque_Cultural.jpg",
     "artist": "Luisnh1210",
     "license": "CC BY-SA 4.0",
@@ -299,7 +411,8 @@
     "w": 675,
     "h": 900,
     "alt": "Vista de la ciudad desde el Parque Cultural del Caribe",
-    "alt_en": "View of the city from the Parque Cultural del Caribe"
+    "alt_en": "View of the city from the Parque Cultural del Caribe",
+    "source": "Wikimedia Commons"
    }
   ]
  },
@@ -307,7 +420,6 @@
   "photos": [
    {
     "file": "catedral-1.jpg",
-    "commons": "File:Barranquilla Catedral.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Barranquilla_Catedral.jpg",
     "artist": "Jdvillalobos",
     "license": "Public domain",
@@ -315,11 +427,11 @@
     "w": 900,
     "h": 675,
     "alt": "Fachada de la Catedral Metropolitana María Reina",
-    "alt_en": "Facade of the Metropolitan Cathedral of Mary Queen"
+    "alt_en": "Facade of the Metropolitan Cathedral of Mary Queen",
+    "source": "Wikimedia Commons"
    },
    {
     "file": "catedral-2.jpg",
-    "commons": "File:Vista occidente-oriente interior catedral de Barranquilla 25-01-2026.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Vista_occidente-oriente_interior_catedral_de_Barranquilla_25-01-2026.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -327,11 +439,11 @@
     "w": 900,
     "h": 675,
     "alt": "Interior de la catedral con sus vitrales",
-    "alt_en": "Inside the cathedral with its stained glass"
+    "alt_en": "Inside the cathedral with its stained glass",
+    "source": "Wikimedia Commons"
    },
    {
     "file": "catedral-3.jpg",
-    "commons": "File:Vista general del interior de la catedral Barranquilla 25-ene-2026.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Vista_general_del_interior_de_la_catedral_Barranquilla_25-ene-2026.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -339,11 +451,11 @@
     "w": 900,
     "h": 675,
     "alt": "Nave central de la catedral",
-    "alt_en": "Central nave of the cathedral"
+    "alt_en": "Central nave of the cathedral",
+    "source": "Wikimedia Commons"
    },
    {
     "file": "catedral-4.jpg",
-    "commons": "File:Vitral superior frontispicio catedral de Barranquilla 2026-01-26.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Vitral_superior_frontispicio_catedral_de_Barranquilla_2026-01-26.jpg",
     "artist": "Jdvillalobos",
     "license": "CC BY-SA 4.0",
@@ -351,7 +463,8 @@
     "w": 900,
     "h": 675,
     "alt": "Vitral superior de la catedral",
-    "alt_en": "Upper stained-glass window of the cathedral"
+    "alt_en": "Upper stained-glass window of the cathedral",
+    "source": "Wikimedia Commons"
    }
   ]
  }
