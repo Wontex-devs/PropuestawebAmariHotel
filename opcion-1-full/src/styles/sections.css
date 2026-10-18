@@ -370,14 +370,15 @@
 
 .suites__grid {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  grid-template-rows: auto auto;
-  gap: clamp(1.25rem, 2.4vw, 2rem);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+  align-items: stretch;
 }
 
+/* Las tres suites con el mismo tamaño y la misma estructura */
 .suite-card {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
   background: var(--color-bg);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -389,25 +390,10 @@
   box-shadow: var(--shadow-card);
 }
 
-.suite-card--feature {
-  grid-row: 1 / span 2;
-  grid-template-rows: 1fr auto;
-}
-
 .suite-card__media {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
-}
-
-.suite-card--feature .suite-card__media {
-  aspect-ratio: auto;
-  min-height: 420px;
-}
-
-.suite-card--feature .suite-card__media img {
-  position: absolute;
-  inset: 0;
+  aspect-ratio: 4 / 3;
 }
 
 .suite-card__media img {
@@ -422,9 +408,10 @@
 }
 
 .suite-card__body {
-  display: grid;
-  align-content: start;
-  justify-items: start;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-3);
   padding: clamp(1.5rem, 2.5vw, 2.25rem);
 }
@@ -438,6 +425,10 @@
 
 .suite-card p:not(.suite-card__tag) {
   color: var(--color-text-soft);
+}
+
+.suite-card__body .btn {
+  margin-top: auto;
 }
 
 .amenities {
@@ -501,18 +492,9 @@
   font-weight: 500;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .suites__grid {
     grid-template-columns: 1fr;
-  }
-
-  .suite-card--feature {
-    grid-row: auto;
-  }
-
-  .suite-card--feature .suite-card__media {
-    min-height: 0;
-    aspect-ratio: 16 / 11;
   }
 
   .details {
