@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-sEbc6UqGsZQyK3BfL7TqWzgOfJC9F9mRGzhoEtkxyHU='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-sEbc6UqGsZQyK3BfL7TqWzgOfJC9F9mRGzhoEtkxyHU='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Amari Living Suites | Hotel in Barranquilla</title>
     <meta name="description" content="Amari Living Suites, a hotel in Barranquilla with suites equipped with a kitchenette, a coworking space and a meeting room. See our services and book your stay." />
@@ -29,17 +29,12 @@
     <meta property="og:image:alt" content="Amari Living Suites, Barranquilla" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300..700;1,400&display=swap"
-    />
     <link rel="preload" as="image" href="../public/img/dsc03316-1600.webp" imagesrcset="../public/img/dsc03316-800.webp 800w, ../public/img/dsc03316-1600.webp 1600w, ../public/img/dsc03316-2200.webp 2200w" imagesizes="100vw" />
 
     <link rel="preload" as="image" href="../public/brand/amari-logo-white.png" />
     <link rel="preload" as="font" type="font/woff" href="../public/fonts/ivymode-regular.woff" crossorigin />
-    <link rel="stylesheet" href="../src/styles/tokens.css" />
+    <link rel="preload" as="font" type="font/woff2" href="../public/fonts/karla-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="../src/styles/tokens.css?v=2" />
     <link rel="stylesheet" href="../src/styles/base.css" />
     <link rel="stylesheet" href="../src/styles/components.css?v=2" />
     <link rel="stylesheet" href="../src/styles/sections.css?v=6" />

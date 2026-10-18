@@ -108,7 +108,7 @@ En cada versión, **todo** está en `src/js/config.js`. Hay que editarlo en las 
 
 - **Logotipo**: se extrajo directamente de `logo amari.ai.pdf`, sin redibujarlo, con fondo transparente. Las variantes de color corresponden a las de la pág. 16 del manual.
 - **Colores** (pág. 14): `#F1A622` dorado, `#C5635B` terracota, `#B0C7BA` salvia y `#000000` negro, más tintes de esas mismas escalas. Están en `src/styles/tokens.css`.
-- **Tipografía** (pág. 15): **Karla** para los textos (Google Fonts, licencia OFL) e **IvyMode** para los titulares. El archivo de IvyMode se tomó de la web actual del cliente.
+- **Tipografía** (pág. 15): **Karla** para los textos (licencia OFL, alojada en `public/fonts/` junto a su licencia) e **IvyMode** para los titulares. El archivo de IvyMode se tomó de la web actual del cliente.
 - **Recursos gráficos**: énfasis en itálica dentro de los titulares, títulos pequeños en mayúsculas con espaciado amplio y el ícono "Λ". Todo esto sale de las piezas del propio manual.
 - **Textos**: el hero muestra solo el logotipo oficial, sin eslogan. No se usó ningún texto de las imágenes de referencia.
 - **Referencias de ChatGPT**: se usaron solo para la composición: encabezado, hero con logo centrado, barra de reserva superpuesta, franja de 5 íconos, bloques de texto e imagen alternados y la tarjeta "Haz tu reserva". No se copiaron su logo, su verde ni su tipografía.

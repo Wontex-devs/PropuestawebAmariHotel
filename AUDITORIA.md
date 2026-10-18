@@ -17,6 +17,7 @@
 | Privacidad | El mapa de Google se cargaba sin consentimiento | El mapa solo se carga con permiso. Hay diálogo de preferencias y política de cookies |
 | Legal | Sin rutas de términos, privacidad ni cookies; el formulario tenía una sola casilla | 6 páginas legales (ES/EN) en rutas estables. El formulario tiene 3 casillas separadas y desmarcadas, y deja constancia de la aceptación |
 | Seguridad | Sin CSP | CSP en `<meta>` con hash del único script en línea, más política de referer |
+| Terceros al cargar | Google Fonts y Google Maps | **Ninguno**: Karla e IvyMode se sirven desde el propio sitio y el mapa espera al consentimiento |
 | Diseño | — | **Se conserva.** Las medidas coinciden píxel a píxel con las de antes, salvo los elementos legales añadidos (sección 21) |
 
 Para publicar con plenas garantías falta información que **solo el hotel puede dar** (sección 23).
@@ -52,6 +53,7 @@ Para publicar con plenas garantías falta información que **solo el hotel puede
 | `src/js/config.js` | `legal.version` (versión citada en la constancia) |
 | `src/styles/extras.css`, `policies.css` | Estilos del mapa con consentimiento, del diálogo, de las casillas, del aviso de borrador y de las marcas de «Pendiente» |
 | `robots.txt`, `sitemap.xml` | **Nuevos** (por versión, apuntando al dominio de producción) |
+| `public/fonts/karla-*.woff2`, `OFL-Karla.txt`, `src/styles/tokens.css` | Karla alojada localmente (4 archivos woff2 oficiales de Google Fonts: normal 300–700 e itálica 400, juegos latin y latin-ext), con su licencia OFL. Se eliminó la conexión a `fonts.googleapis.com` y `fonts.gstatic.com` |
 | `tools/` | Generadores (EN, políticas y documentos legales) y validador |
 | `docs/inventario-imagenes.csv` | Inventario de derechos de imágenes y fuentes |
 
@@ -112,13 +114,11 @@ Lo que se mantiene sin cambios: diseño, textos comerciales, tarifas, políticas
 - **No medido**: PSI agotó su cuota y aquí no hay Lighthouse. No se afirman cifras de LCP, INP ni CLS.
 - Lo verificable:
   - La portada ya no carga Google Maps al abrir (antes eran un iframe y sus recursos desde `www.google.com`).
-  - En la carga inicial, el único tercero que queda es Google Fonts (Karla).
+  - Karla ya se sirve desde el propio sitio, con `preload` del archivo principal: la carga inicial **no hace ninguna petición a terceros**, porque se eliminaron las conexiones a `fonts.googleapis.com` y `fonts.gstatic.com`.
   - Las escenas 2–6 del hero siguen cargándose después del evento `load`.
   - La imagen del primer pintado tiene `preload` y `fetchpriority="high"`.
   - Todas las imágenes declaran `width` y `height`, lo que previene saltos de diseño (CLS).
-- Recomendado (pendiente de autorización):
-  - **Alojar Karla localmente**, con licencia OFL: elimina dos conexiones a Google y la transferencia de la IP. Implica descargar los archivos `.woff2` de Karla del repositorio oficial de Google Fonts.
-  - Medir en producción con PageSpeed Insights y el informe de Core Web Vitals de Search Console.
+- Recomendado: medir en producción con PageSpeed Insights y con el informe de Core Web Vitals de Search Console.
 
 ## 10. Accesibilidad (WCAG 2.2 AA)
 
@@ -142,7 +142,7 @@ Contraste medido automáticamente sobre el texto renderizado:
 
 En el código:
 
-- CSP en `<meta>`: `default-src 'self'`, scripts solo propios más el hash del script en línea del `<head>`, `frame-src https://www.google.com` (mapa), `object-src 'none'`, `base-uri 'self'`, `form-action 'self'` y `upgrade-insecure-requests`. `style-src` admite `'unsafe-inline'` por los atributos `style` del hero (variables CSS).
+- CSP en `<meta>`: `default-src 'self'`, fuentes y estilos solo propios, scripts solo propios más el hash del script en línea del `<head>`, `frame-src https://www.google.com` (mapa), `object-src 'none'`, `base-uri 'self'`, `form-action 'self'` y `upgrade-insecure-requests`. `style-src` admite `'unsafe-inline'` por los atributos `style` del hero (variables CSS).
 - `referrer: strict-origin-when-cross-origin`. Los enlaces externos usan `rel="noopener"`.
 - Sin `eval`, sin dependencias externas de JS y sin formularios que envíen datos a un servidor.
 - **Hash del script en línea:** si se modifica el script del `<head>` de `index.html`, hay que recalcular el hash y actualizarlo en `tools/site_common.py`:
@@ -231,7 +231,7 @@ Acciones:
 
 - Pedir al hotel una confirmación escrita de la titularidad o licencia de las fotos, en particular la cesión de derechos patrimoniales del fotógrafo (Ley 23 de 1982).
 - Confirmar que la licencia de **IvyMode** cubre su uso web en el nuevo hosting. El archivo viene del sitio actual; si no está cubierto, usar el kit de Adobe Fonts del cliente (`config.adobeFontsKitId`).
-- Karla: SIL Open Font License, sin restricción.
+- Karla: SIL Open Font License 1.1. Ahora se aloja localmente y su licencia acompaña los archivos (`public/fonts/OFL-Karla.txt`), como pide la OFL.
 - Las dos imágenes de referencia de ChatGPT **no se usan** en el sitio.
 
 ## 17. Revisión normativa colombiana
@@ -298,11 +298,11 @@ Analítica (si se decide usarla):
 
 | Prueba | Resultado |
 |---|---|
-| W3C Nu, 20 páginas | **0 errores** (antes: ~22 en la portada Full) |
+| W3C Nu, 20 páginas | **0 errores** (antes: ~22 en la portada Full). Tras alojar Karla se revalidaron 5 páginas con 0 errores, hasta que el validador público limitó las peticiones (HTTP 429). El cambio solo tocó etiquetas `<link>` del `<head>`; conviene repetir `tools/validate.py` más tarde |
 | Enlaces internos y recursos (888 referencias, incluidos `srcset` y anclas) | 0 rotos |
 | CSP en el navegador (escucha de `securitypolicyviolation`) | 0 violaciones. Las clases `js`, `splash-done` e `is-ready` se aplican: el script en línea con hash se ejecuta |
 | Consola | Sin errores. Solo el aviso esperado de la lavandería, cuyo número está pendiente |
-| Carga inicial | Sin iframes, sin cookies y sin `www.google.com`. Terceros: solo Google Fonts |
+| Carga inicial | Sin iframes, sin cookies y **sin ningún tercero** (Karla local: cargan la normal, la itálica y latin-ext; geometría a 1440 px idéntica a la versión con Google Fonts) |
 | Mapa | No se carga sin acción. «Cargar mapa» lo inserta; «Recordar» lo persiste; «Rechazar» lo quita; «Aceptar» lo restaura al recargar |
 | Formulario | Casillas desmarcadas; bloqueo con mensaje claro; constancia con hora `-05:00` y versión en el cuerpo del correo |
 | Geometría Full a 1440 px | Posición y alto idénticos en todas las secciones hasta Ubicación. Ubicación +86 px (casillas); Reserva solo se desplaza; pie +75 px (enlaces legales) |
@@ -318,7 +318,6 @@ Analítica (si se decide usarla):
 | Alta | Revisión jurídica y aprobación de los 3 documentos, y quitar `noindex` al aprobarlos | Hotel + abogado |
 | Alta | Definir la cláusula de retracto frente a las tarifas no reembolsables | Abogado |
 | Alta | Confirmar los derechos de las fotos y la licencia de IvyMode | Hotel |
-| Media | Autorizar que Karla se aloje localmente (quita Google Fonts) | Cliente → equipo web |
 | Media | Cabeceras de seguridad y 301 de URLs antiguas en el hosting de producción | Hosting |
 | Media | Search Console y sitemap (sección 20) | Quien administre el DNS |
 | Media | Decidir si el hero lleva control de pausa (WCAG 2.2.2) | Cliente |

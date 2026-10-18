@@ -268,10 +268,7 @@ def page(d, here, alt_here, wa_href, extra_head_ld=''):
     <meta property="og:description" content="{d['desc']}" />
     <meta property="og:url" content="{BASE}{here}" />
     <meta property="og:image" content="{BASE}public/og-image.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300..700;1,400&display=swap" />
-    <link rel="stylesheet" href="{prefix}src/styles/tokens.css" />
+    <link rel="stylesheet" href="{prefix}src/styles/tokens.css?v=2" />
     <link rel="stylesheet" href="{prefix}src/styles/base.css" />
     <link rel="stylesheet" href="{prefix}src/styles/components.css?v=2" />
     <link rel="stylesheet" href="{prefix}src/styles/sections.css?v=6" />

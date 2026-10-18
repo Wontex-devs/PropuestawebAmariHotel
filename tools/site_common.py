@@ -11,8 +11,8 @@ def csp(inline_script=False):
     return (
         "default-src 'self'; "
         f"script-src {script}; "
-        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-        "font-src 'self' https://fonts.gstatic.com; "
+        "style-src 'self' 'unsafe-inline'; "
+        "font-src 'self'; "
         "img-src 'self' data:; "
         "frame-src https://www.google.com; "
         "connect-src 'self'; "
