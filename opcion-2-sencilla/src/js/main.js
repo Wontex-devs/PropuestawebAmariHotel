@@ -60,6 +60,12 @@ const T = {
     of: 'de',
     videoTitle: 'Video de Amari Living Suites',
     reelPause: 'Pausar el carrusel de fotos',
+    close: 'Cerrar',
+    loading: 'Cargando…',
+    legalAccept: 'Acepto los Términos y Condiciones',
+    legalRead: 'He leído la Política de Privacidad',
+    legalNewTab: 'Abrir en una pestaña nueva',
+    legalError: 'No pudimos cargar el documento. Ábrelo en una pestaña nueva con el enlace de abajo.',
     reelPlay: 'Reanudar el carrusel de fotos',
   },
   en: {
@@ -108,6 +114,12 @@ const T = {
     of: 'of',
     videoTitle: 'Amari Living Suites video',
     reelPause: 'Pause the photo carousel',
+    close: 'Close',
+    loading: 'Loading…',
+    legalAccept: 'I accept the Terms and Conditions',
+    legalRead: 'I have read the Privacy Policy',
+    legalNewTab: 'Open in a new tab',
+    legalError: 'We could not load the document. Open it in a new tab with the link below.',
     reelPlay: 'Play the photo carousel',
   },
 }[LANG];
@@ -616,6 +628,84 @@ function setupLightbox() {
 /* ============================================================
    Formulario de contacto (como en la web actual) → correo
    ============================================================ */
+/* ============================================================
+   Lectura de Términos / Privacidad en una ventana sobre el formulario,
+   con botón para aceptar que marca la casilla correspondiente.
+   ============================================================ */
+function setupLegalReader() {
+  const links = $$('[data-legal]');
+  if (!links.length || typeof HTMLDialogElement === 'undefined') return;
+  const d = document.createElement('dialog');
+  d.className = 'legal-modal';
+  d.setAttribute('aria-labelledby', 'legal-modal-title');
+  d.innerHTML = `
+    <div class="legal-modal__head">
+      <h2 class="legal-modal__title" id="legal-modal-title"></h2>
+      <button class="icon-btn" type="button" data-legal-close aria-label="${T.close}"><svg class="icon" aria-hidden="true"><use href="#i-close" /></svg></button>
+    </div>
+    <div class="legal-modal__body" data-legal-body tabindex="0"></div>
+    <div class="legal-modal__foot">
+      <a class="legal-modal__open" data-legal-open target="_blank" rel="noopener"></a>
+      <button class="btn btn--sm btn--outline" type="button" data-legal-close>${T.close}</button>
+      <button class="btn btn--sm" type="button" data-legal-accept></button>
+    </div>`;
+  document.body.append(d);
+  const title = $('#legal-modal-title', d);
+  const body = $('[data-legal-body]', d);
+  const accept = $('[data-legal-accept]', d);
+  const openLink = $('[data-legal-open]', d);
+  const cache = {};
+  let box = null;
+
+  const load = async (url) => {
+    if (cache[url]) return cache[url];
+    const html = await (await fetch(url)).text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    doc.querySelectorAll('a[href]').forEach((a) => {
+      a.href = new URL(a.getAttribute('href'), url).href;
+      a.target = '_blank';
+      a.rel = 'noopener';
+    });
+    doc.querySelectorAll('[id]').forEach((el) => el.removeAttribute('id'));
+    doc.querySelectorAll('[aria-labelledby]').forEach((el) => el.removeAttribute('aria-labelledby'));
+    const parts = [doc.querySelector('.policies__notice'), ...doc.querySelectorAll('.policies__body .policy')].filter(Boolean);
+    if (!parts.length) throw new Error('sin contenido');
+    cache[url] = parts.map((p) => p.outerHTML).join('');
+    return cache[url];
+  };
+
+  links.forEach((a) =>
+    a.addEventListener('click', async (e) => {
+      e.preventDefault();
+      box = a.closest('label')?.querySelector('input[type="checkbox"]') || null;
+      title.textContent = a.textContent.trim();
+      accept.textContent = a.dataset.legal === 'terms' ? T.legalAccept : T.legalRead;
+      openLink.href = a.href;
+      openLink.textContent = T.legalNewTab;
+      body.innerHTML = `<p>${T.loading}</p>`;
+      d.showModal();
+      try {
+        body.innerHTML = await load(a.href);
+      } catch {
+        body.innerHTML = `<p>${T.legalError}</p>`;
+      }
+      body.scrollTop = 0;
+    })
+  );
+
+  accept.addEventListener('click', () => {
+    if (box) {
+      box.checked = true;
+      box.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    d.close();
+  });
+  d.addEventListener('click', (e) => {
+    if (e.target === d || e.target.closest('[data-legal-close]')) d.close();
+  });
+  d.addEventListener('close', () => box && box.focus());
+}
+
 /** Fecha y hora ISO 8601 con la zona de Colombia (UTC−05:00, sin horario de verano). */
 function colombiaTimestamp(d = new Date()) {
   const t = new Date(d.getTime() - 5 * 60 * 60 * 1000).toISOString().slice(0, 19);
@@ -688,4 +778,5 @@ setupGallery();
 setupHeroReel();
 setupLightbox();
 setupContactForm();
+setupLegalReader();
 setupConsent({ mapsEmbedUrl: config.contact.mapsEmbedUrl });

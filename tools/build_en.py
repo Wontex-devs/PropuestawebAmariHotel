@@ -307,8 +307,10 @@ T.update({
  'El mapa es un servicio de Google: al cargarlo, Google recibe tu dirección IP y puede instalar cookies.':
    'The map is a Google service: when it loads, Google receives your IP address and may set cookies.',
  'Más información': 'Learn more',
- 'Cargar mapa': 'Load map',
- 'Recordar mi elección': 'Remember my choice',
+ 'Ver mapa': 'View map',
+ 'El mapa es de Google: al abrirlo, Google recibe tu dirección IP y puede usar cookies. Recordaremos tu elección.':
+   'The map is provided by Google: when you open it, Google receives your IP address and may use cookies. We will remember your choice.',
+ 'Vista aérea del edificio Amari Living Suites': 'Aerial view of the Amari Living Suites building',
  'Política de cancelación': 'Cancellation policy',
  'Política de pagos': 'Payment policy',
  'Política de servicios': 'Service policy',

@@ -161,7 +161,7 @@ En el servidor (no se pueden poner desde el HTML; tarea del hosting):
 
 ## 12. Cookies y consentimiento
 
-- **Por defecto no se carga nada opcional.** El mapa muestra un aviso con el botón «Cargar mapa» y la casilla desmarcada «Recordar mi elección».
+- **Por defecto no se carga nada opcional.** En lugar del mapa se muestra la foto aérea del edificio con el botón «Ver mapa» y un aviso breve. Al pulsarlo, el mapa se carga y la elección se recuerda (se informa en el aviso y se puede retirar).
 - «Preferencias de cookies» aparece en el pie de **todas** las páginas y abre un diálogo:
   - Categoría «Necesarias», siempre activa.
   - Categoría «Mapas (Google Maps)», desmarcada por defecto.
@@ -201,6 +201,7 @@ Las rutas son estables y llevan aviso de «Borrador para revisión», `noindex` 
   1. «Acepto los [Términos y Condiciones]», con enlace.
   2. «He leído la [Política de Privacidad]», con enlace.
   3. Una **autorización de tratamiento de datos separada**, que indica qué datos se tratan y para qué.
+- Al pulsar «Términos y Condiciones» o «Política de Privacidad» se abre una ventana sobre el formulario con el texto completo y un botón «Acepto…» / «He leído…» que marca la casilla y vuelve al formulario. Cerrar sin aceptar no marca nada. Hay también un enlace para abrir el documento en otra pestaña.
 - El envío se bloquea mientras falte cualquiera de las tres, y el mensaje de error dice cuáles.
 - No se envía nada a un servidor: se abre el correo de la persona con el mensaje y, al final, una **constancia de aceptación** con:
   - El identificador del formulario.
@@ -303,7 +304,7 @@ Analítica (si se decide usarla):
 | CSP en el navegador (escucha de `securitypolicyviolation`) | 0 violaciones. Las clases `js`, `splash-done` e `is-ready` se aplican: el script en línea con hash se ejecuta |
 | Consola | Sin errores. Solo el aviso esperado de la lavandería, cuyo número está pendiente |
 | Carga inicial | Sin iframes, sin cookies y **sin ningún tercero** (Karla local: cargan la normal, la itálica y latin-ext; geometría a 1440 px idéntica a la versión con Google Fonts) |
-| Mapa | No se carga sin acción. «Cargar mapa» lo inserta; «Recordar» lo persiste; «Rechazar» lo quita; «Aceptar» lo restaura al recargar |
+| Mapa | No se carga sin acción. «Ver mapa» lo inserta y recuerda la elección; «Rechazar» en preferencias lo quita; «Aceptar» lo restaura al recargar. Verificado en el sitio publicado: el mapa se ve completo |
 | Formulario | Casillas desmarcadas; bloqueo con mensaje claro; constancia con hora `-05:00` y versión en el cuerpo del correo |
 | Geometría Full a 1440 px | Posición y alto idénticos en todas las secciones hasta Ubicación. Ubicación +86 px (casillas); Reserva solo se desplaza; pie +75 px (enlaces legales) |
 | Geometría Sencilla a 375 px | Idéntica. Ubicación +89 px y pie +75 px. Sin desborde horizontal (`scrollWidth` = 375) |

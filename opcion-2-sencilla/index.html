@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="src/styles/base.css" />
     <link rel="stylesheet" href="src/styles/components.css?v=2" />
     <link rel="stylesheet" href="src/styles/sections.css?v=6" />
-    <link rel="stylesheet" href="src/styles/extras.css?v=5" />
+    <link rel="stylesheet" href="src/styles/extras.css?v=6" />
     <link rel="stylesheet" href="src/styles/hero-reel.css?v=2" />
     <link rel="stylesheet" href="src/styles/intro.css?v=4" />
     <link rel="stylesheet" href="src/styles/simple.css" />
@@ -1059,11 +1059,12 @@
           </div>
           <div class="location__map">
             <div class="map-consent" data-map-consent data-map-title="Mapa de ubicación de Amari Living Suites en Barranquilla">
-              <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
-              <p class="map-consent__title">Mapa de ubicación</p>
-              <p class="map-consent__text">El mapa es un servicio de Google: al cargarlo, Google recibe tu dirección IP y puede instalar cookies. <a href="politica-de-cookies/">Más información</a>.</p>
-              <button class="btn btn--sm" type="button" data-map-load>Cargar mapa</button>
-              <label class="map-consent__remember"><input type="checkbox" data-map-remember /> Recordar mi elección</label>
+              <img class="map-consent__img" src="public/img/dji0785-800.webp" srcset="public/img/dji0785-800.webp 800w, public/img/dji0785-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw" alt="Vista aérea del edificio Amari Living Suites" width="1600" height="1067" loading="lazy" decoding="async" />
+              <div class="map-consent__panel">
+                <p class="map-consent__title">Mapa de ubicación</p>
+                <button class="btn btn--gold" type="button" data-map-load><svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>Ver mapa</button>
+                <p class="map-consent__text">El mapa es de Google: al abrirlo, Google recibe tu dirección IP y puede usar cookies. Recordaremos tu elección. <a href="politica-de-cookies/">Más información</a></p>
+              </div>
             </div>
           </div>
         </div>
@@ -1091,11 +1092,11 @@
               <div class="consents" role="group" aria-label="Aceptaciones">
                 <label class="consent">
                   <input type="checkbox" name="acceptTerms" required />
-                  <span>Acepto los <a href="terminos-y-condiciones/" target="_blank" rel="noopener">Términos y Condiciones</a>.</span>
+                  <span>Acepto los <a href="terminos-y-condiciones/" target="_blank" rel="noopener" data-legal="terms">Términos y Condiciones</a>.</span>
                 </label>
                 <label class="consent">
                   <input type="checkbox" name="readPrivacy" required />
-                  <span>He leído la <a href="politica-de-privacidad/" target="_blank" rel="noopener">Política de Privacidad</a>.</span>
+                  <span>He leído la <a href="politica-de-privacidad/" target="_blank" rel="noopener" data-legal="privacy">Política de Privacidad</a>.</span>
                 </label>
                 <label class="consent">
                   <input type="checkbox" name="consent" required />
@@ -1244,6 +1245,6 @@
     </div>
 
     <script type="module" src="src/js/intro.js?v=4"></script>
-    <script type="module" src="src/js/main.js?v=4"></script>
+    <script type="module" src="src/js/main.js?v=5"></script>
   </body>
 </html>

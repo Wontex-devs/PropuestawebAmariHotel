@@ -2,7 +2,7 @@
  * CONSENTIMIENTO — contenido de terceros y preferencias de cookies
  * --------------------------------------------------------------
  * - Por defecto NO se carga nada opcional: el mapa de Google solo se
- *   inserta si la persona pulsa «Cargar mapa» o lo acepta en preferencias.
+ *   inserta si la persona pulsa «Ver mapa» o lo acepta en preferencias.
  * - La elección se guarda en localStorage (`amari.consent`), solo como
  *   preferencia del navegador, máximo 12 meses. No es un registro oficial.
  * - Para añadir otra categoría (p. ej. analítica), sumarla a CATEGORIES
@@ -169,15 +169,11 @@ function openPrefs(policyHref, opener) {
 export function setupConsent({ mapsEmbedUrl }) {
   mapUrl = mapsEmbedUrl;
 
-  // Botón «Cargar mapa» (con opción de recordar la elección)
-  document.querySelectorAll('[data-map-consent]').forEach((ph) => {
-    const btn = ph.querySelector('[data-map-load]');
-    const remember = ph.querySelector('[data-map-remember]');
-    btn?.addEventListener('click', () => {
-      if (remember?.checked) setConsent({ ...(getConsent() || {}), maps: true });
-      else loadMap();
-    });
-  });
+  // Botón «Ver mapa»: es una acción expresa; la elección se recuerda
+  // (se informa en el aviso y se puede retirar en «Preferencias de cookies»)
+  document.querySelectorAll('[data-map-load]').forEach((btn) =>
+    btn.addEventListener('click', () => setConsent({ ...(getConsent() || {}), maps: true }))
+  );
 
   document.querySelectorAll('[data-cookie-prefs]').forEach((b) =>
     b.addEventListener('click', () => openPrefs(b.dataset.policy || '#', b))
