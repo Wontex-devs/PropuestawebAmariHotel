@@ -187,3 +187,40 @@
     padding: 5px;
   }
 }
+
+/* ---------- Documentos legales: aviso de borrador y datos pendientes ---------- */
+.policies__notice {
+  max-width: 720px;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(197, 99, 91, 0.45);
+  border-left: 4px solid var(--amari-terracotta);
+  border-radius: var(--radius-sm);
+  background: var(--amari-white);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.policy mark.pending {
+  padding: 0.05em 0.3em;
+  border-radius: 4px;
+  background: rgba(241, 166, 34, 0.22);
+  color: var(--amari-black);
+  font-weight: 600;
+}
+
+.policy code {
+  font-size: 0.9em;
+  padding: 0.05em 0.3em;
+  border-radius: 4px;
+  background: var(--sage-100);
+}
+
+/* Enlaces legales en el pie de las páginas secundarias */
+.policies__legal ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}

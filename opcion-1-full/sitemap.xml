@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Los documentos legales (términos, privacidad, cookies) se añadirán cuando
+     el hotel los apruebe y se retire su etiqueta noindex. Ver AUDITORIA.md. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://amarilivingsuite.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amarilivingsuite.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amarilivingsuite.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amarilivingsuite.com/" />
+  </url>
+  <url>
+    <loc>https://amarilivingsuite.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amarilivingsuite.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amarilivingsuite.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amarilivingsuite.com/" />
+  </url>
+  <url>
+    <loc>https://amarilivingsuite.com/politicas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amarilivingsuite.com/politicas.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amarilivingsuite.com/en/politicas.html" />
+  </url>
+  <url>
+    <loc>https://amarilivingsuite.com/en/politicas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amarilivingsuite.com/politicas.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amarilivingsuite.com/en/politicas.html" />
+  </url>
+</urlset>

@@ -99,6 +99,12 @@ export const config = {
     },
   },
 
+  /* Versión de los documentos legales que se cita en la constancia de aceptación
+     del formulario de contacto. Cambiarla cada vez que se actualicen los textos. */
+  legal: {
+    version: 'borrador v0.1 (2026-10-18)',
+  },
+
   /* Políticas: páginas propias del sitio (texto tomado de la web actual). */
   policies: [
     { id: 'cancelacion', es: 'Política de cancelación', en: 'Cancellation policy' },

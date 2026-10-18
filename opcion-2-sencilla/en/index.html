@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Amari Living Suites · Suites with kitchenettes in Barranquilla</title>
-    <meta
-      name="description"
-      content="Amari Living Suites: 32 fully equipped suites with kitchenettes in Barranquilla, Colombia. Book online or via WhatsApp. Coworking space and meeting room by the hour, plus 10% off with our partner businesses."
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-sEbc6UqGsZQyK3BfL7TqWzgOfJC9F9mRGzhoEtkxyHU='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Amari Living Suites | Hotel in Barranquilla</title>
+    <meta name="description" content="Amari Living Suites, a hotel in Barranquilla with suites equipped with a kitchenette, a coworking space and a meeting room. See our services and book your stay." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://amarilivingsuite.com/en/" />
+    <link rel="alternate" hreflang="es" href="https://amarilivingsuite.com/" />
+    <link rel="alternate" hreflang="en" href="https://amarilivingsuite.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://amarilivingsuite.com/" />
     <meta name="theme-color" content="#000000" />
-    <link rel="alternate" hreflang="es" href="../" />
-    <link rel="alternate" hreflang="en" href="./" />
     <link rel="icon" type="image/png" href="../public/favicon.png" />
     <link rel="apple-touch-icon" href="../public/favicon.png" />
 
@@ -18,12 +20,13 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="es_CO" />
     <meta property="og:site_name" content="Amari Living Suites" />
-    <meta property="og:title" content="Amari Living Suites · Barranquilla" />
-    <meta
-      property="og:description"
-      content="Fully equipped suites with kitchenettes in a strategic location in Barranquilla."
-    />
-    <meta property="og:image" content="../public/og-image.jpg" />
+    <meta property="og:title" content="Amari Living Suites | Hotel in Barranquilla" />
+    <meta property="og:description" content="Fully equipped suites with kitchenettes in a strategic location in Barranquilla." />
+    <meta property="og:url" content="https://amarilivingsuite.com/en/" />
+    <meta property="og:image" content="https://amarilivingsuite.com/public/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Amari Living Suites, Barranquilla" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,7 +43,7 @@
     <link rel="stylesheet" href="../src/styles/base.css" />
     <link rel="stylesheet" href="../src/styles/components.css?v=2" />
     <link rel="stylesheet" href="../src/styles/sections.css?v=6" />
-    <link rel="stylesheet" href="../src/styles/extras.css?v=4" />
+    <link rel="stylesheet" href="../src/styles/extras.css?v=5" />
     <link rel="stylesheet" href="../src/styles/hero-reel.css" />
     <link rel="stylesheet" href="../src/styles/intro.css?v=4" />
     <link rel="stylesheet" href="../src/styles/simple.css" />
@@ -62,21 +65,89 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Hotel",
-        "name": "Amari Living Suites",
-        "url": "https://amarilivingsuite.com/",
-        "email": "atencionalcliente@amarilivingsuite.com",
-        "telephone": ["+573023307939", "+576053133460"],
-        "numberOfRooms": 32,
-        "checkinTime": "15:00",
-        "checkoutTime": "12:00",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Carrera 42F #76-41",
-          "addressLocality": "Barranquilla",
-          "addressRegion": "Atlántico",
-          "addressCountry": "CO"
-        }
+        "@graph": [
+          {
+            "@type": "Hotel",
+            "@id": "https://amarilivingsuite.com/#hotel",
+            "name": "Amari Living Suites",
+            "url": "https://amarilivingsuite.com/",
+            "logo": "https://amarilivingsuite.com/public/brand/amari-logo-black-sm.png",
+            "image": [
+              "https://amarilivingsuite.com/public/og-image.jpg"
+            ],
+            "email": "atencionalcliente@amarilivingsuite.com",
+            "telephone": [
+              "+573023307939",
+              "+576053133460"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carrera 42F #76-41",
+              "addressLocality": "Barranquilla",
+              "addressRegion": "Atlántico",
+              "addressCountry": "CO"
+            },
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=Amari%20Living%20Suites%2C%20Carrera%2042F%20%2376-41%2C%20Barranquilla",
+            "numberOfRooms": 32,
+            "checkinTime": "15:00",
+            "checkoutTime": "12:00",
+            "smokingAllowed": false,
+            "currenciesAccepted": "COP",
+            "paymentAccepted": "Visa, Mastercard, Diners Club, American Express",
+            "amenityFeature": [
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wi-Fi",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Parqueadero sin costo (1 vehículo por suite, sujeto a disponibilidad)",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Gimnasio",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Cocineta en las suites",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Cowork",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Sala de juntas",
+                "value": true
+              }
+            ],
+            "sameAs": [
+              "https://www.youtube.com/@Amarilivingsuites"
+            ],
+            "potentialAction": {
+              "@type": "ReserveAction",
+              "target": "https://hotels.cloudbeds.com/en/reservation/FuhJUM?currency=cop"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://amarilivingsuite.com/#website",
+            "url": "https://amarilivingsuite.com/",
+            "name": "Amari Living Suites",
+            "inLanguage": [
+              "es-CO",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://amarilivingsuite.com/#hotel"
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -200,7 +271,7 @@
           Book online
           <svg class="icon btn__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
         </a>
-        <a class="btn btn--ghost-light btn--block" data-wa="amari" target="_blank" rel="noopener">
+        <a class="btn btn--ghost-light btn--block" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20stay%20at%20Amari%20Living%20Suites.%20Could%20you%20help%20me%20check%20availability%20and%20booking%20options%3F" data-wa="amari" target="_blank" rel="noopener">
           <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
           Message us on WhatsApp
         </a>
@@ -218,21 +289,11 @@
           <figure class="hero-reel__slide" style="--i: 0; --tx: -2.2%; --ty: -1%; --pos: 50% 55%">
             <img class="hero__img" src="../public/img/dsc03316-1600.webp" srcset="../public/img/dsc03316-800.webp 800w, ../public/img/dsc03316-1600.webp 1600w, ../public/img/dsc03316-2200.webp 2200w" sizes="100vw" alt="" width="1600" height="1067" fetchpriority="high" decoding="async" draggable="false" />
           </figure>
-          <figure class="hero-reel__slide" style="--i: 1; --tx: 2%; --ty: 0%; --pos: 50% 50%">
-            <img data-src="../public/img/img01-1-2-1600.webp" data-srcset="../public/img/img01-1-2-800.webp 800w, ../public/img/img01-1-2-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1067" decoding="async" draggable="false" />
-          </figure>
-          <figure class="hero-reel__slide" style="--i: 2; --tx: -1.6%; --ty: 1.2%; --pos: 50% 45%">
-            <img data-src="../public/img/dsc02494-1600.webp" data-srcset="../public/img/dsc02494-800.webp 800w, ../public/img/dsc02494-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1067" decoding="async" draggable="false" />
-          </figure>
-          <figure class="hero-reel__slide" style="--i: 3; --tx: 2%; --ty: -1%; --pos: 50% 55%">
-            <img data-src="../public/img/room-portada-1600.webp" data-srcset="../public/img/room-portada-800.webp 800w, ../public/img/room-portada-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1067" decoding="async" draggable="false" />
-          </figure>
-          <figure class="hero-reel__slide" style="--i: 4; --tx: 0%; --ty: -2%; --pos: 50% 60%">
-            <img data-src="../public/img/banner-nosotros-1600.webp" data-srcset="../public/img/banner-nosotros-800.webp 800w, ../public/img/banner-nosotros-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1067" decoding="async" draggable="false" />
-          </figure>
-          <figure class="hero-reel__slide" style="--i: 5; --tx: -2%; --ty: 1%; --pos: 50% 50%">
-            <img data-src="../public/img/dji0785-1600.webp" data-srcset="../public/img/dji0785-800.webp 800w, ../public/img/dji0785-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1067" decoding="async" draggable="false" />
-          </figure>
+          <figure class="hero-reel__slide" style="--i: 1; --tx: 2%; --ty: 0%; --pos: 50% 50%" data-src="../public/img/img01-1-2-1600.webp" data-srcset="../public/img/img01-1-2-800.webp 800w, ../public/img/img01-1-2-1600.webp 1600w"></figure>
+          <figure class="hero-reel__slide" style="--i: 2; --tx: -1.6%; --ty: 1.2%; --pos: 50% 45%" data-src="../public/img/dsc02494-1600.webp" data-srcset="../public/img/dsc02494-800.webp 800w, ../public/img/dsc02494-1600.webp 1600w"></figure>
+          <figure class="hero-reel__slide" style="--i: 3; --tx: 2%; --ty: -1%; --pos: 50% 55%" data-src="../public/img/room-portada-1600.webp" data-srcset="../public/img/room-portada-800.webp 800w, ../public/img/room-portada-1600.webp 1600w"></figure>
+          <figure class="hero-reel__slide" style="--i: 4; --tx: 0%; --ty: -2%; --pos: 50% 60%" data-src="../public/img/banner-nosotros-1600.webp" data-srcset="../public/img/banner-nosotros-800.webp 800w, ../public/img/banner-nosotros-1600.webp 1600w"></figure>
+          <figure class="hero-reel__slide" style="--i: 5; --tx: -2%; --ty: 1%; --pos: 50% 50%" data-src="../public/img/dji0785-1600.webp" data-srcset="../public/img/dji0785-800.webp 800w, ../public/img/dji0785-1600.webp 1600w"></figure>
         </div>
         <div class="hero__shade" aria-hidden="true"></div>
 
@@ -451,7 +512,7 @@
           </div>
 
           <!-- Detalles reales de las suites -->
-          <div class="details" aria-label="Suite details">
+          <div class="details" role="group" aria-label="Suite details">
             <figure class="details__item">
               <img src="../public/img/dsc02638-800.webp" alt="Kitchenette with microwave, refrigerator and sink" width="800" height="1200" loading="lazy" decoding="async" />
               <figcaption>Equipped kitchenette</figcaption>
@@ -581,7 +642,7 @@
                     <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
                     <span data-rate="cowork">Ask for the hourly rate</span>
                   </div>
-                  <a class="btn btn--gold" data-wa="cowork" target="_blank" rel="noopener">
+                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20check%20the%20availability%20and%20hourly%20rate%20of%20the%20Amari%20Living%20Suites%20coworking%20space." data-wa="cowork" target="_blank" rel="noopener">
                     <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                     Check availability
                   </a>
@@ -597,7 +658,7 @@
                     <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
                     <span data-rate="meeting">Ask for the hourly rate</span>
                   </div>
-                  <a class="btn btn--gold" data-wa="meeting" target="_blank" rel="noopener">
+                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20check%20the%20availability%20and%20hourly%20rate%20of%20the%20Amari%20Living%20Suites%20meeting%20room." data-wa="meeting" target="_blank" rel="noopener">
                     <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                     Check availability
                   </a>
@@ -651,7 +712,7 @@
                 Staying at Amari has its perks. Our partner businesses offer you an exclusive discount during your stay.
               </p>
             </div>
-            <div class="discount" aria-label="10% discount for guests">
+            <div class="discount" role="group" aria-label="10% discount for guests">
               <span class="discount__value">10<small>%</small></span>
               <span class="discount__label">off for guests at the restaurant-café and the laundry</span>
             </div>
@@ -708,7 +769,7 @@
             <article class="place">
               <figure class="place__media">
                 <img src="../public/img/barranquilla/malecon.jpg" alt="Gran Malecón del Río, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:PlazadeLucesGranMaleconBarranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · CC BY-SA 4.0</figcaption>
+                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:PlazadeLucesGranMaleconBarranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
               </figure>
               <div class="place__body">
                 <h3 class="place__name">Gran Malecón del Río</h3>
@@ -720,7 +781,7 @@
             <article class="place">
               <figure class="place__media">
                 <img src="../public/img/barranquilla/luna-del-rio.jpg" alt="Luna del Río, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Noria_Luna_del_R%C3%ADo_Malec%C3%B3n_Barranquilla_2026-06-20.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · CC BY-SA 4.0</figcaption>
+                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Noria_Luna_del_R%C3%ADo_Malec%C3%B3n_Barranquilla_2026-06-20.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
               </figure>
               <div class="place__body">
                 <h3 class="place__name">Luna del Río</h3>
@@ -732,7 +793,7 @@
             <article class="place">
               <figure class="place__media">
                 <img src="../public/img/barranquilla/ventana-de-campeones.jpg" alt="Ventana de Campeones, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_de_Campeones.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · CC BY-SA 4.0</figcaption>
+                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_de_Campeones.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
               </figure>
               <div class="place__body">
                 <h3 class="place__name">Ventana de Campeones</h3>
@@ -744,7 +805,7 @@
             <article class="place">
               <figure class="place__media">
                 <img src="../public/img/barranquilla/ventana-al-mundo.jpg" alt="Ventana al Mundo, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_al_Mundo.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · CC BY-SA 4.0</figcaption>
+                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_al_Mundo.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
               </figure>
               <div class="place__body">
                 <h3 class="place__name">Ventana al Mundo</h3>
@@ -756,7 +817,7 @@
             <article class="place">
               <figure class="place__media">
                 <img src="../public/img/barranquilla/museo-del-carnaval.jpg" alt="Museo del Carnaval, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Museo_del_carnaval_de_Barranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · CC BY-SA 4.0</figcaption>
+                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Museo_del_carnaval_de_Barranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
               </figure>
               <div class="place__body">
                 <h3 class="place__name">Museo del Carnaval</h3>
@@ -768,7 +829,7 @@
             <article class="place">
               <figure class="place__media">
                 <img src="../public/img/barranquilla/cienaga-de-mallorquin.jpg" alt="Ecoparque Ciénaga de Mallorquín, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Paisaje_Ci%C3%A9naga_de_Mallorqu%C3%ADn.jpg" target="_blank" rel="noopener">Project5443</a> · CC0</figcaption>
+                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Paisaje_Ci%C3%A9naga_de_Mallorqu%C3%ADn.jpg" target="_blank" rel="noopener">Project5443</a> · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener license">CC0</a></figcaption>
               </figure>
               <div class="place__body">
                 <h3 class="place__name">Ecoparque Ciénaga de Mallorquín</h3>
@@ -780,7 +841,7 @@
             <article class="place">
               <figure class="place__media">
                 <img src="../public/img/barranquilla/museo-del-caribe.jpg" alt="Museo del Caribe, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Facade_of_Museo_del_Caribe_at_Barranquilla_Colombia.jpg" target="_blank" rel="noopener">Oliver H</a> · CC BY-SA 4.0</figcaption>
+                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Facade_of_Museo_del_Caribe_at_Barranquilla_Colombia.jpg" target="_blank" rel="noopener">Oliver H</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
               </figure>
               <div class="place__body">
                 <h3 class="place__name">Museo del Caribe</h3>
@@ -971,33 +1032,33 @@
                 <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>
                 <div>
                   <span class="contact-list__label">Phone</span>
-                  <a data-contact="phoneMobile">302 330 7939</a> · <a data-contact="phoneLandline">605 313 3460</a>
+                  <a href="tel:+573023307939" data-contact="phoneMobile">302 330 7939</a> · <a href="tel:+576053133460" data-contact="phoneLandline">605 313 3460</a>
                 </div>
               </li>
               <li>
                 <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
-                <div><span class="contact-list__label">Email</span><a data-contact="email">atencionalcliente@amarilivingsuite.com</a></div>
+                <div><span class="contact-list__label">Email</span><a href="mailto:atencionalcliente@amarilivingsuite.com" data-contact="email">atencionalcliente@amarilivingsuite.com</a></div>
               </li>
             </ul>
             <div class="location__ctas">
-              <a class="btn" data-wa="amari" target="_blank" rel="noopener">
+              <a class="btn" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20stay%20at%20Amari%20Living%20Suites.%20Could%20you%20help%20me%20check%20availability%20and%20booking%20options%3F" data-wa="amari" target="_blank" rel="noopener">
                 <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                 Message us on WhatsApp
               </a>
-              <a class="btn btn--outline" data-contact="directions" target="_blank" rel="noopener">
+              <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&amp;query=Amari%20Living%20Suites%2C%20Carrera%2042F%20%2376-41%2C%20Barranquilla" data-contact="directions" target="_blank" rel="noopener">
                 Get directions
                 <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
               </a>
             </div>
           </div>
           <div class="location__map">
-            <iframe
-              data-contact="map"
-              title="Map showing the location of Amari Living Suites in Barranquilla"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
+            <div class="map-consent" data-map-consent data-map-title="Map showing the location of Amari Living Suites in Barranquilla">
+              <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+              <p class="map-consent__title">Location map</p>
+              <p class="map-consent__text">The map is a Google service: when it loads, Google receives your IP address and may set cookies. <a href="cookie-policy/">Learn more</a>.</p>
+              <button class="btn btn--sm" type="button" data-map-load>Load map</button>
+              <label class="map-consent__remember"><input type="checkbox" data-map-remember /> Remember my choice</label>
+            </div>
           </div>
         </div>
         <div class="container">
@@ -1005,7 +1066,7 @@
             <div class="contact-card__intro">
               <h3 class="h3">Write to us</h3>
               <p class="muted">
-                Leave us a message and we’ll reply by email. When you send it, your email app will open with the message ready to send to <a data-contact="email">atencionalcliente@amarilivingsuite.com</a>.
+                Leave us a message and we’ll reply by email. When you send it, your email app will open with the message ready to send to <a href="mailto:atencionalcliente@amarilivingsuite.com" data-contact="email">atencionalcliente@amarilivingsuite.com</a>.
               </p>
             </div>
             <form class="contact-form" data-contact-form novalidate>
@@ -1020,10 +1081,20 @@
               <label class="field field--area">
                 <span class="field__text"><span class="field__label">Message</span><textarea name="message" rows="4" placeholder="How can we help you?" required></textarea></span>
               </label>
-              <label class="consent">
-                <input type="checkbox" name="consent" required />
-                <span>I agree to the processing of my personal data in accordance with the <a href="politicas.html#privacidad">privacy policy</a>.</span>
-              </label>
+              <div class="consents" role="group" aria-label="Acceptances">
+                <label class="consent">
+                  <input type="checkbox" name="acceptTerms" required />
+                  <span>I accept the <a href="terms-and-conditions/" target="_blank" rel="noopener">Terms and Conditions</a>.</span>
+                </label>
+                <label class="consent">
+                  <input type="checkbox" name="readPrivacy" required />
+                  <span>I have read the <a href="privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+                </label>
+                <label class="consent">
+                  <input type="checkbox" name="consent" required />
+                  <span>I authorize Amari Living Suites to process my personal data (name, email and message) to reply to my request, in accordance with the Privacy Policy.</span>
+                </label>
+              </div>
               <button class="btn" type="submit">
                 <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
                 Send message
@@ -1118,14 +1189,22 @@
           <h2 class="site-footer__title">Contact</h2>
           <ul role="list">
             <li data-contact="address">Carrera 42F #76-41, Barranquilla</li>
-            <li><a data-contact="phoneMobile">302 330 7939</a></li>
-            <li><a data-contact="phoneLandline">605 313 3460</a></li>
-            <li><a data-contact="email">atencionalcliente@amarilivingsuite.com</a></li>
+            <li><a href="tel:+573023307939" data-contact="phoneMobile">302 330 7939</a></li>
+            <li><a href="tel:+576053133460" data-contact="phoneLandline">605 313 3460</a></li>
+            <li><a href="mailto:atencionalcliente@amarilivingsuite.com" data-contact="email">atencionalcliente@amarilivingsuite.com</a></li>
           </ul>
         </div>
         <nav aria-label="Policies">
           <h2 class="site-footer__title">Policies</h2>
-          <ul role="list" data-policies></ul>
+          <ul role="list">
+            <li><a href="politicas.html#cancelacion">Cancellation policy</a></li>
+            <li><a href="politicas.html#pagos">Payment policy</a></li>
+            <li><a href="politicas.html#servicios">Service policy</a></li>
+            <li><a href="terms-and-conditions/">Terms and conditions</a></li>
+            <li><a href="privacy-policy/">Privacy policy</a></li>
+            <li><a href="cookie-policy/">Cookie policy</a></li>
+            <li><button class="site-footer__prefs" type="button" data-cookie-prefs data-policy="cookie-policy/">Cookie preferences</button></li>
+          </ul>
           <h2 class="site-footer__title site-footer__title--spaced">Follow us</h2>
           <ul role="list">
             <li><a href="https://www.youtube.com/@Amarilivingsuites" target="_blank" rel="noopener"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-youtube" /></svg>&nbsp;YouTube</a></li>
@@ -1143,7 +1222,6 @@
       <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close gallery"><svg class="icon" aria-hidden="true"><use href="#i-close" /></svg></button>
       <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Previous photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
       <figure class="lightbox__figure">
-        <img data-lightbox-img alt="" />
         <figcaption><span data-lightbox-caption></span> <span class="lightbox__counter" data-lightbox-counter></span></figcaption>
       </figure>
       <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
@@ -1152,13 +1230,13 @@
     <!-- Acciones persistentes -->
     <div class="mobile-bar" data-mobile-bar>
       <a class="btn btn--gold" href="https://hotels.cloudbeds.com/en/reservation/FuhJUM?currency=cop" data-booking target="_blank" rel="noopener">Book online</a>
-      <a class="btn btn--outline mobile-bar__wa" data-wa="amari" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <a class="btn btn--outline mobile-bar__wa" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20stay%20at%20Amari%20Living%20Suites.%20Could%20you%20help%20me%20check%20availability%20and%20booking%20options%3F" data-wa="amari" target="_blank" rel="noopener">
         <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
         WhatsApp
       </a>
     </div>
 
     <script type="module" src="../src/js/intro.js?v=4"></script>
-    <script type="module" src="../src/js/main.js?v=2"></script>
+    <script type="module" src="../src/js/main.js?v=3"></script>
   </body>
 </html>

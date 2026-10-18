@@ -85,11 +85,11 @@ No se incluyó el crédito "Designed by 360Webmasters.com", que corresponde al d
 
 ## Idiomas (ES / EN)
 
-- **Español:** `index.html` y `politicas.html`. **Inglés:** `en/index.html` y `en/politicas.html`. Cada versión (Full y Sencilla) tiene las suyas.
+- **Español:** `index.html`, `politicas.html` y los documentos legales (`terminos-y-condiciones/`, `politica-de-privacidad/`, `politica-de-cookies/`). **Inglés:** los equivalentes dentro de `en/`. Cada versión (Full y Sencilla) tiene los suyos.
 - **Traducción:** se tradujo a mano. Donde la web actual tenía textos oficiales en inglés (habitaciones, Sobre nosotros, Conoce Barranquilla), se usaron como base.
 - **Textos generados por JavaScript:** los mensajes de WhatsApp, los errores de los formularios, las fechas y las etiquetas del visor salen en el idioma de la página. Los mensajes de WhatsApp en inglés están en `config.js` → `messages.en`.
 - **Reseñas:** se muestran en su idioma original (inglés, español o portugués), marcadas con su idioma para los lectores de pantalla.
-- **Si cambias un texto en español:** actualiza también el archivo `en/` correspondiente.
+- **Si cambias un texto en español:** regenera las páginas en inglés con los scripts de `tools/` (ver `tools/README.md`). No edites a mano los archivos de `en/`.
 
 ## Dónde se configuran los datos
 
@@ -101,7 +101,8 @@ En cada versión, **todo** está en `src/js/config.js`. Hay que editarlo en las 
 - **Tarifas por hora** → `rates.coworkHourlyRate`, `rates.meetingRoomHourlyRate` (número entero en COP; por ejemplo, `45000` se muestra como "$45.000 COP / hora")
 - **Moneda** → `rates.currency`
 - **Cloudbeds** → `bookingUrl`. No debe cambiarse. El HTML también trae esa misma URL como respaldo por si JavaScript no carga.
-- **Políticas (textos)** → `politicas.html` y `en/politicas.html`
+- **Políticas y documentos legales (textos)** → `tools/build_policies.py` y `tools/build_legal.py` (generan las páginas ES/EN)
+- **Versión de los documentos legales** (se cita en la constancia del formulario) → `legal.version`
 
 ## Identidad visual (manual de marca)
 
@@ -112,6 +113,10 @@ En cada versión, **todo** está en `src/js/config.js`. Hay que editarlo en las 
 - **Textos**: el hero muestra solo el logotipo oficial, sin eslogan. No se usó ningún texto de las imágenes de referencia.
 - **Referencias de ChatGPT**: se usaron solo para la composición: encabezado, hero con logo centrado, barra de reserva superpuesta, franja de 5 íconos, bloques de texto e imagen alternados y la tarjeta "Haz tu reserva". No se copiaron su logo, su verde ni su tipografía.
 
+## Auditoría (18-oct-2026)
+
+El informe completo de SEO, rendimiento, seguridad, privacidad y cumplimiento está en [`AUDITORIA.md`](AUDITORIA.md). Ahí están también los datos que debe entregar el hotel.
+
 ## ⏳ Pendiente de confirmar antes de publicar
 
 1. **Licencia de IvyMode**: el archivo viene de la propia web del cliente. Conviene confirmar que su licencia web cubre el nuevo sitio.
@@ -121,10 +126,10 @@ En cada versión, **todo** está en `src/js/config.js`. Hay que editarlo en las 
 5. **Fotos del cowork, la sala de juntas, el restaurante y la lavandería**: no existen fotos reales. Esas secciones usan bloques gráficos con los colores de la marca, no fotos de otros lugares.
 6. **Detalles del cowork y la sala de juntas** (capacidad, equipamiento, horarios): no están documentados y no se inventaron.
 7. **Condiciones del 10 %**: solo se publica el descuento.
-8. **Política de privacidad**: en la web actual la página solo tiene el título, sin texto. Por ahora la nueva página indica que la política está en actualización y da el correo de contacto. El cliente debe entregar el texto oficial.
+8. **Documentos legales**: términos, privacidad y cookies ya tienen página propia, como **borradores con `noindex`**. Faltan los datos marcados como «Pendiente» y la revisión jurídica. Ver `AUDITORIA.md` (secciones 13, 17 y 23).
 9. **Calificación de Google (4,6 / 61 reseñas)**: es el dato que mostraba el widget de la web actual el 18-oct-2026. Es un número fijo, así que conviene actualizarlo de vez en cuando.
 10. **Fotos de Barranquilla**: vienen de Wikimedia Commons, con licencias CC BY-SA 4.0, CC0 o dominio público. Cada foto muestra su autor y su licencia, como exige la licencia. Si el cliente tiene fotos propias, se pueden reemplazar en `public/img/barranquilla/`.
-11. **Dominio**: `og:image` usa una ruta relativa. Al publicar, conviene cambiarla por la URL absoluta del dominio.
+11. **Dominio**: canónica, `hreflang`, Open Graph, `sitemap.xml` y `robots.txt` ya apuntan a `https://amarilivingsuite.com/`. Al publicar, sube **una** versión a la raíz del dominio.
 12. **WhatsApp de Amari**: `+57 302 330 7939`, el número publicado en las políticas de la web actual. Conviene confirmar que sigue activo.
 
 ## Fuentes consultadas

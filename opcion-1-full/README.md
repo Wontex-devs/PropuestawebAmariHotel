@@ -13,6 +13,11 @@ Abre http://localhost:5173. Requiere Node 18 o superior. Sin Node, se puede usar
 index.html              Página principal en español (SEO, Open Graph, JSON-LD)
 en/index.html           Página principal en inglés
 politicas.html          Políticas completas (en/politicas.html en inglés)
+terminos-y-condiciones/ Términos (borrador; en/terms-and-conditions/)
+politica-de-privacidad/ Privacidad (borrador; en/privacy-policy/)
+politica-de-cookies/    Cookies (borrador; en/cookie-policy/)
+sitemap.xml, robots.txt Para el dominio de producción
+src/js/consent.js       Mapa con consentimiento y preferencias de cookies
 public/img/             Fotografías reales del hotel (WebP); galeria/ = las 45 fotos; barranquilla/ = sitios (Wikimedia Commons)
 public/brand/           Logotipo oficial (blanco y negro) extraído del PDF del cliente
 public/favicon.png      Ícono "Λ" del manual

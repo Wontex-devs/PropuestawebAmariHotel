@@ -1,0 +1,6 @@
+# Amari Living Suites — robots.txt para el dominio de producción.
+# Solo tiene efecto en la raíz del dominio (https://amarilivingsuite.com/robots.txt).
+User-agent: *
+Allow: /
+
+Sitemap: https://amarilivingsuite.com/sitemap.xml
