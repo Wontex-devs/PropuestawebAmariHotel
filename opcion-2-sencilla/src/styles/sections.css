@@ -266,8 +266,10 @@
     height: 18px;
   }
 
-  .quickbar input[type='date'] {
-    font-size: 0.92rem;
+  /* Fechas: sin ícono inicial para que la fecha completa quepa */
+  .quickbar__field:nth-child(2) > .icon,
+  .quickbar__field:nth-child(3) > .icon {
+    display: none;
   }
 }
 
@@ -1136,6 +1138,12 @@ figure.bento__item figcaption strong {
   .ally__visual {
     min-height: 150px;
   }
+
+  /* Foto del restaurante: tamaño completo en el celular, no una franja recortada */
+  .ally__visual--photo {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* ============ Espacios de trabajo ============ */
@@ -1470,7 +1478,12 @@ figure.bento__item figcaption strong {
 
   .location__map,
   .location__map iframe {
-    min-height: 340px;
+    min-height: 0;
+  }
+
+  /* Mapa con una altura cómoda en el celular (antes ocupaba casi toda la pantalla) */
+  .location__map {
+    height: clamp(320px, 95vw, 440px);
   }
 }
 
@@ -1674,4 +1687,35 @@ figure.bento__item figcaption strong {
 
 .ally__visual--photo .ally__badge {
   z-index: 1;
+}
+
+/* =============================================================
+   Celular: campos a 16 px como mínimo (evita que el iPhone haga
+   zoom al tocar un campo) y fechas legibles
+   ============================================================= */
+@media (max-width: 760px) {
+  input:not([type='checkbox']):not([type='radio']),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  input[type='date'] {
+    min-height: 1.6em;
+  }
+
+  input[type='date']::-webkit-date-and-time-value {
+    text-align: left;
+  }
+}
+
+/* Resaltado breve del formulario al llegar desde un botón de WhatsApp */
+.quickbar {
+  transition: box-shadow 0.4s ease;
+}
+
+.quickbar.is-highlighted {
+  box-shadow:
+    0 0 0 3px var(--amari-gold),
+    0 24px 50px -24px rgba(0, 0, 0, 0.35);
 }

@@ -12,7 +12,7 @@ src = open(os.path.join(P, 'index.html'), encoding='utf-8').read()
 T = {
  # <head>
  'Amari Living Suites · Suites con cocineta en Barranquilla': 'Amari Living Suites · Suites with kitchenettes in Barranquilla',
- 'Amari Living Suites: 32 suites totalmente equipadas con cocineta en Barranquilla. Reserva en línea o por WhatsApp. Cowork y sala de juntas por horas, y beneficios del 10 % con nuestros aliados.':
+ 'Amari Living Suites: 32 suites totalmente equipadas con cocineta en Barranquilla. Reserva en línea o por WhatsApp. Coworking y sala de juntas por horas, y beneficios del 10 % con nuestros aliados.':
    'Amari Living Suites: 32 fully equipped suites with kitchenettes in Barranquilla, Colombia. Book online or via WhatsApp. Coworking space and meeting room by the hour, plus 10% off with our partner businesses.',
  'Suites totalmente equipadas con cocineta, en una ubicación estratégica de Barranquilla.': 'Fully equipped suites with kitchenettes in a strategic location in Barranquilla.',
  # Navegación
@@ -28,7 +28,7 @@ T = {
  'Abrir menú': 'Open menu',
  'Menú móvil': 'Mobile menu',
  'Inicio': 'Home',
- 'Servicios y cowork': 'Services & coworking',
+ 'Servicios y coworking': 'Services & coworking',
  'Conoce Barranquilla': 'Discover Barranquilla',
  'Opiniones': 'Reviews',
  'Ubicación y contacto': 'Location & contact',
@@ -52,7 +52,7 @@ T = {
  # Destacados
  'Lo esencial de Amari': 'Amari at a glance',
  'Suites con cocineta': 'Suites with kitchenette',
- 'Cowork por horas': 'Coworking by the hour',
+ 'Coworking por horas': 'Coworking by the hour',
  'Restaurante-café aliado': 'Partner restaurant-café',
  'Lavandería aliada': 'Partner laundry',
  'Ubicación estratégica': 'Strategic location',
@@ -123,11 +123,11 @@ T = {
  'Pasillos serenos': 'Quiet hallways',
  'Silencio y orden para descansar.': 'Peace and order so you can rest.',
  'Espacios de trabajo · Por horas': 'Workspaces · By the hour',
- 'Cowork y': 'Coworking &',
+ 'Coworking y': 'Coworking &',
  'sala de juntas': 'meeting room',
  'Dos espacios disponibles por horas para tus jornadas de trabajo y reuniones en Barranquilla. Escríbenos para consultar disponibilidad y reservar.':
    'Two spaces available by the hour for your workdays and meetings in Barranquilla. Message us to check availability and book.',
- 'Cowork': 'Coworking',
+ 'Coworking': 'Coworking',
  'Un espacio de coworking en el rooftop de Amari para concentrarte, avanzar en tus pendientes y trabajar cómodo durante tu viaje.':
    'A coworking space on Amari’s rooftop where you can focus, get things done and work comfortably during your trip.',
  'Consulta la tarifa por hora': 'Ask for the hourly rate',
@@ -263,7 +263,7 @@ T = {
  # Pie
  'Secciones': 'Sections',
  'Explora': 'Explore',
- 'Cowork y sala de juntas': 'Coworking & meeting room',
+ 'Coworking y sala de juntas': 'Coworking & meeting room',
  'Beneficios para huéspedes': 'Guest benefits',
  'Políticas': 'Policies',
  'Síguenos': 'Follow us',
@@ -294,7 +294,7 @@ GAL = {
 # ---- Auditoría (oct-2026): SEO, privacidad, documentos legales ----
 T.update({
  'Amari Living Suites | Hotel en Barranquilla': 'Amari Living Suites | Hotel in Barranquilla',
- 'Amari Living Suites, hotel en Barranquilla con suites equipadas con cocineta, cowork y sala de juntas. Consulta nuestros servicios y reserva tu estadía.':
+ 'Amari Living Suites, hotel en Barranquilla con suites equipadas con cocineta, coworking y sala de juntas. Consulta nuestros servicios y reserva tu estadía.':
    'Amari Living Suites, a hotel in Barranquilla with suites equipped with a kitchenette, a coworking space and a meeting room. See our services and book your stay.',
  'Aceptaciones': 'Acceptances',
  'Acepto los': 'I accept the',
@@ -308,6 +308,12 @@ T.update({
    'The map is a Google service: when it loads, Google receives your IP address and may set cookies.',
  'Más información': 'Learn more',
  'Ver mapa': 'View map',
+ "Ser huésped de Amari tiene ventajas. Nuestros negocios aliados te ofrecen beneficios exclusivos durante tu estadía.": "Being an Amari guest has its perks. Our partner businesses offer you exclusive benefits during your stay.",
+ "10 % de descuento para huéspedes en la lavandería aliada": "10% discount for guests at the partner laundry",
+ "de descuento para huéspedes en la lavandería aliada": "off for guests at the partner laundry",
+ "Promociones": "Promotions",
+ "Accede a promociones": "Enjoy promotions",
+ "por ser huésped de Amari Living Suites.": "as an Amari Living Suites guest.",
  "Vista aérea con dron del Gran Malecón junto al río Magdalena": "Drone view of the Gran Malecón along the Magdalena River",
  "La Luna del Río junto al río Magdalena al atardecer": "Luna del Río beside the Magdalena River at sunset",
  "Carrusel del Gran Malecón con la Luna del Río al fondo": "Gran Malecón carousel with Luna del Río in the background",

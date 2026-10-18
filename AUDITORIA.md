@@ -168,10 +168,8 @@ En el servidor (no se pueden poner desde el HTML; tarea del hosting):
   - Botones «Rechazar opcionales», «Guardar» y «Aceptar todas», con el mismo peso visual.
 - Al retirar el consentimiento, el mapa se quita de la página. Las cookies que Google ya haya puesto no las puede borrar este sitio; la política lo explica.
 - La elección se guarda en `localStorage` (`amari.consent`, 12 meses), **solo como preferencia del navegador**, nunca como registro oficial.
-- **No se muestra un banner automático**, porque hoy el sitio no usa ninguna cookie opcional al cargar. Si en el futuro se añade analítica o publicidad:
-  - Registrarla como categoría en `CATEGORIES` (en `consent.js`).
-  - Cargar su script solo cuando `getConsent()[id] === true`.
-  - Mostrar un banner en la primera visita.
+- **Aviso de cookies en la primera visita** (pedido del cliente, 18-oct-2026): aparece al terminar la animación de entrada, con «Aceptar», «Rechazar» y «Configurar». Al aceptar, el mapa de Google con la ubicación del hotel se carga de inmediato; al rechazar, se recuerda la elección y el aviso no vuelve a salir (hasta 12 meses). En el celular se ubica sobre la barra fija de «Reservar / WhatsApp».
+- Si en el futuro se añade analítica o publicidad, registrarla como categoría en `CATEGORIES` (en `consent.js`) y cargar su script solo cuando `getConsent()[id] === true`.
 - Cloudbeds, WhatsApp, Instagram y YouTube son solo enlaces: no cargan nada hasta que la persona hace clic.
 
 ## 13. Documentos legales

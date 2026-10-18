@@ -37,8 +37,8 @@
     <link rel="stylesheet" href="../src/styles/tokens.css?v=2" />
     <link rel="stylesheet" href="../src/styles/base.css" />
     <link rel="stylesheet" href="../src/styles/components.css?v=2" />
-    <link rel="stylesheet" href="../src/styles/sections.css?v=7" />
-    <link rel="stylesheet" href="../src/styles/extras.css?v=8" />
+    <link rel="stylesheet" href="../src/styles/sections.css?v=10" />
+    <link rel="stylesheet" href="../src/styles/extras.css?v=10" />
     <link rel="stylesheet" href="../src/styles/hero-reel.css?v=3" />
     <link rel="stylesheet" href="../src/styles/intro.css?v=4" />
     <link rel="stylesheet" href="../src/styles/simple.css" />
@@ -112,7 +112,7 @@
               },
               {
                 "@type": "LocationFeatureSpecification",
-                "name": "Cowork",
+                "name": "Coworking",
                 "value": true
               },
               {
@@ -270,7 +270,7 @@
           Book online
           <svg class="icon btn__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
         </a>
-        <a class="btn btn--ghost-light btn--block" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20stay%20at%20Amari%20Living%20Suites.%20Could%20you%20help%20me%20check%20availability%20and%20booking%20options%3F" data-wa="amari" target="_blank" rel="noopener">
+        <a class="btn btn--ghost-light btn--block" href="#consulta" data-to-form data-menu-link>
           <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
           Message us on WhatsApp
         </a>
@@ -303,7 +303,7 @@
 
       <!-- Barra de consulta (escritorio) — se envía por WhatsApp, no confirma reservas -->
       <div class="quickbar-wrap container">
-        <form class="quickbar" data-booking-form aria-label="Check availability on WhatsApp" novalidate>
+        <form class="quickbar" id="consulta" data-booking-form aria-label="Check availability on WhatsApp" novalidate>
           <div class="quickbar__field">
             <svg class="icon" aria-hidden="true"><use href="#i-user" /></svg>
             <label>
@@ -532,7 +532,7 @@
         </div>
       </section>
 
-      <!-- ===================== SERVICIOS (incluye cowork y sala de juntas) ===================== -->
+      <!-- ===================== SERVICIOS (incluye coworking y sala de juntas) ===================== -->
       <section class="section services" id="servicios" aria-labelledby="services-title">
         <div class="container">
           <header class="section-head">
@@ -621,7 +621,7 @@
           </div>
 
 
-          <!-- Cowork y sala de juntas (por horas) -->
+          <!-- Coworking y sala de juntas (por horas) -->
           <div class="workspaces work-panel" id="espacios-de-trabajo">
             <div class="work-panel__intro">
               <p class="eyebrow">Workspaces · By the hour</p>
@@ -641,7 +641,7 @@
                     <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
                     <span data-rate="cowork">Ask for the hourly rate</span>
                   </div>
-                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20check%20the%20availability%20and%20hourly%20rate%20of%20the%20Amari%20Living%20Suites%20coworking%20space." data-wa="cowork" target="_blank" rel="noopener">
+                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hello%2C%20I%20found%20you%20on%20the%20Amari%20Living%20Suites%20website%20and%20I%20am%20interested%20in%20the%20coworking%20service.%20Could%20you%20tell%20me%20about%20availability%20and%20hourly%20rates%3F" data-wa="cowork" target="_blank" rel="noopener">
                     <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                     Check availability
                   </a>
@@ -657,7 +657,7 @@
                     <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
                     <span data-rate="meeting">Ask for the hourly rate</span>
                   </div>
-                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20check%20the%20availability%20and%20hourly%20rate%20of%20the%20Amari%20Living%20Suites%20meeting%20room." data-wa="meeting" target="_blank" rel="noopener">
+                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hello%2C%20I%20found%20you%20on%20the%20Amari%20Living%20Suites%20website%20and%20I%20am%20interested%20in%20booking%20the%20meeting%20room.%20Could%20you%20tell%20me%20about%20availability%20and%20hourly%20rates%3F" data-wa="meeting" target="_blank" rel="noopener">
                     <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                     Check availability
                   </a>
@@ -708,12 +708,12 @@
               <p class="eyebrow">Amari partners</p>
               <h2 class="h2" id="allies-title">Benefits that <em>make your stay easier</em></h2>
               <p class="lead">
-                Staying at Amari has its perks. Our partner businesses offer you an exclusive discount during your stay.
+                Being an Amari guest has its perks. Our partner businesses offer you exclusive benefits during your stay.
               </p>
             </div>
-            <div class="discount" role="group" aria-label="10% discount for guests">
+            <div class="discount" role="group" aria-label="10% discount for guests at the partner laundry">
               <span class="discount__value">10<small>%</small></span>
-              <span class="discount__label">off for guests at the restaurant-café and the laundry</span>
+              <span class="discount__label">off for guests at the partner laundry</span>
             </div>
           </div>
 
@@ -721,7 +721,7 @@
             <article class="ally ally--restaurant">
               <div class="ally__visual" aria-hidden="true">
                 <svg class="icon"><use href="#i-coffee" /></svg>
-                <span class="ally__badge">-10 %</span>
+                <span class="ally__badge">Promotions</span>
               </div>
               <div class="ally__body">
                 <p class="ally__kicker">Restaurant-café</p>
@@ -729,7 +729,7 @@
                 <p>
                   A coffee break, a relaxed lunch or an easy meal while you stay in Barranquilla.
                 </p>
-                <p class="ally__benefit"><strong>10% off</strong> for Amari Living Suites guests.</p>
+                <p class="ally__benefit"><strong>Enjoy promotions</strong> as an Amari Living Suites guest.</p>
               </div>
             </article>
 
@@ -1223,7 +1223,7 @@
               </li>
             </ul>
             <div class="location__ctas">
-              <a class="btn" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20stay%20at%20Amari%20Living%20Suites.%20Could%20you%20help%20me%20check%20availability%20and%20booking%20options%3F" data-wa="amari" target="_blank" rel="noopener">
+              <a class="btn" href="#consulta" data-to-form>
                 <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                 Message us on WhatsApp
               </a>
@@ -1415,13 +1415,13 @@
     <!-- Acciones persistentes -->
     <div class="mobile-bar" data-mobile-bar>
       <a class="btn btn--gold" href="https://hotels.cloudbeds.com/en/reservation/FuhJUM?currency=cop" data-booking target="_blank" rel="noopener">Book online</a>
-      <a class="btn btn--outline mobile-bar__wa" href="https://wa.me/573023307939?text=Hello%2C%20I%20would%20like%20to%20stay%20at%20Amari%20Living%20Suites.%20Could%20you%20help%20me%20check%20availability%20and%20booking%20options%3F" data-wa="amari" target="_blank" rel="noopener">
+      <a class="btn btn--outline mobile-bar__wa" href="#consulta" data-to-form>
         <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
         WhatsApp
       </a>
     </div>
 
     <script type="module" src="../src/js/intro.js?v=4"></script>
-    <script type="module" src="../src/js/main.js?v=7"></script>
+    <script type="module" src="../src/js/main.js?v=9"></script>
   </body>
 </html>

@@ -1042,3 +1042,93 @@
     scroll-behavior: auto;
   }
 }
+
+/* =============================================================
+   Aviso de cookies (aparece en la primera visita)
+   ============================================================= */
+.cookie-banner {
+  position: fixed;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
+  z-index: 60;
+  display: grid;
+  gap: 0.9rem;
+  max-width: 560px;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--amari-white);
+  color: var(--amari-black);
+  box-shadow: 0 22px 50px -18px rgba(0, 0, 0, 0.35);
+  animation: cookie-in 0.45s var(--ease-out, ease) both;
+}
+
+.cookie-banner__text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-soft);
+}
+
+.cookie-banner__text strong {
+  color: var(--amari-black);
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@keyframes cookie-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@media (max-width: 760px) {
+  /* Encima de la barra fija de «Reservar / WhatsApp» */
+  .cookie-banner {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: calc(76px + 0.6rem + env(safe-area-inset-bottom));
+    padding: 1rem;
+  }
+
+  .cookie-banner__actions .btn {
+    flex: 1 1 0;
+    justify-content: center;
+    min-height: 44px;
+    padding-inline: 0.75rem;
+  }
+
+  .cookie-banner__actions [data-banner='accept'] {
+    order: -1;
+    flex-basis: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner {
+    animation: none;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Las páginas legales no tienen barra fija abajo */
+  .policies-page .cookie-banner {
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* Al cargar el mapa, el aviso con la foto se oculta de verdad */
+.map-consent[hidden] {
+  display: none;
+}
+
+.location__map iframe[data-map-frame] {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

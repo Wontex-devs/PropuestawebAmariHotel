@@ -1,5 +1,5 @@
 import { config } from './config.js?v=3';
-import { setupConsent } from './consent.js?v=1';
+import { setupConsent } from './consent.js?v=2';
 
 /* ============================================================
    Utilidades
@@ -32,6 +32,10 @@ const T = {
     fCheckin: 'la fecha de llegada',
     fCheckout: 'la fecha de salida',
     fCheckoutAfter: 'una fecha de salida posterior a la llegada',
+    fPast: 'una fecha de llegada de hoy en adelante',
+    adjustedIn: 'La llegada no puede ser una fecha pasada: la cambiamos a hoy.',
+    adjustedOut: 'La salida debe ser al menos un día después de la llegada: la ajustamos.',
+    adjustedMax: 'Puedes consultar fechas hasta dos años adelante: ajustamos la llegada.',
     fGuests: 'la cantidad de personas',
     person: 'persona',
     people: 'personas',
@@ -85,6 +89,10 @@ const T = {
     fCheckin: 'the check-in date',
     fCheckout: 'the check-out date',
     fCheckoutAfter: 'a check-out date after check-in',
+    fPast: 'a check-in date from today onwards',
+    adjustedIn: 'Check-in cannot be in the past: we changed it to today.',
+    adjustedOut: 'Check-out must be at least one day after check-in: we adjusted it.',
+    adjustedMax: 'You can ask about dates up to two years ahead: we adjusted check-in.',
     fGuests: 'the number of guests',
     person: '',
     people: '',
@@ -276,8 +284,15 @@ function readableDate(iso) {
   return d.toLocaleDateString(LOCALE, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 }
 
+const MAX_DAYS = 730; // se puede consultar hasta dos años adelante
+const todayISO = () => toISODate(new Date());
+const addDays = (iso, n) => {
+  const d = new Date(`${iso}T12:00:00`);
+  d.setDate(d.getDate() + n);
+  return toISODate(d);
+};
+
 function setupBookingForms() {
-  const today = toISODate(new Date());
 
   $$('[data-booking-form]').forEach((form) => {
     const name = form.elements.name;
@@ -286,16 +301,52 @@ function setupBookingForms() {
     const guests = form.elements.guests;
     const status = $('[data-form-status]', form);
 
-    checkin.min = today;
-    checkout.min = today;
-
-    checkin.addEventListener('change', () => {
-      if (!checkin.value) return;
-      const next = new Date(`${checkin.value}T12:00:00`);
-      next.setDate(next.getDate() + 1);
-      checkout.min = toISODate(next);
-      if (checkout.value && checkout.value <= checkin.value) checkout.value = '';
+    /* Fechas: el atributo min no basta (Safari en iPhone lo ignora en su
+       selector), así que se corrigen las fechas al elegirlas y al enviar. */
+    const note = (msg) => {
+      status.classList.remove('is-error');
+      status.textContent = msg;
+    };
+    const syncLimits = () => {
+      const now = todayISO();
+      checkin.min = now;
+      checkin.max = addDays(now, MAX_DAYS);
+      checkout.min = addDays(checkin.value && checkin.value >= now ? checkin.value : now, 1);
+      checkout.max = addDays(now, MAX_DAYS + 1);
+    };
+    const fixCheckin = () => {
+      if (!checkin.value) return syncLimits();
+      const now = todayISO();
+      if (checkin.value < now) {
+        checkin.value = now;
+        note(T.adjustedIn);
+      } else if (checkin.value > addDays(now, MAX_DAYS)) {
+        checkin.value = addDays(now, MAX_DAYS);
+        note(T.adjustedMax);
+      }
+      syncLimits();
+      if (!checkout.value || checkout.value <= checkin.value) {
+        if (checkout.value) note(T.adjustedOut);
+        checkout.value = addDays(checkin.value, 1);
+      }
+    };
+    const fixCheckout = () => {
+      if (!checkout.value) return;
+      const minOut = addDays(checkin.value || todayISO(), 1);
+      if (checkout.value < minOut) {
+        checkout.value = minOut;
+        note(T.adjustedOut);
+      }
+    };
+    syncLimits();
+    ['change', 'blur'].forEach((ev) => {
+      checkin.addEventListener(ev, fixCheckin);
+      checkout.addEventListener(ev, fixCheckout);
     });
+    checkin.addEventListener('focus', syncLimits);
+    // Al abrir el calendario de salida, los días anteriores a la llegada quedan deshabilitados
+    checkout.addEventListener('focus', syncLimits);
+    checkout.addEventListener('pointerdown', syncLimits);
 
     form.addEventListener('input', (e) => e.target.removeAttribute('aria-invalid'));
 
@@ -307,6 +358,7 @@ function setupBookingForms() {
       [name, checkin, checkout, guests].forEach((f) => f.removeAttribute('aria-invalid'));
       if (!name.value.trim()) errors.push([name, T.fName]);
       if (!checkin.value) errors.push([checkin, T.fCheckin]);
+      else if (checkin.value < todayISO()) errors.push([checkin, T.fPast]);
       if (!checkout.value) errors.push([checkout, T.fCheckout]);
       if (checkin.value && checkout.value && checkout.value <= checkin.value) {
         errors.push([checkout, T.fCheckoutAfter]);
@@ -723,6 +775,30 @@ function setupPlaceGalleries() {
   });
 }
 
+/* ============================================================
+   Botones de WhatsApp de Amari → primero el formulario de consulta
+   (nombre, fechas y huéspedes); WhatsApp se abre al enviarlo.
+   ============================================================ */
+function setupToForm() {
+  const form = $('#consulta');
+  if (!form) return;
+  const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $$('[data-to-form]').forEach((a) =>
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Esperar a que el menú móvil (si estaba abierto) libere el desplazamiento
+      requestAnimationFrame(() => {
+        const header = $('[data-header]')?.offsetHeight || 0;
+        const y = form.getBoundingClientRect().top + window.scrollY - header - 16;
+        window.scrollTo({ top: Math.max(0, y), behavior: smooth ? 'smooth' : 'auto' });
+        form.classList.add('is-highlighted');
+        setTimeout(() => form.classList.remove('is-highlighted'), 1800);
+        setTimeout(() => form.elements.name.focus({ preventScroll: true }), smooth ? 550 : 0);
+      });
+    })
+  );
+}
+
 /** Fecha y hora ISO 8601 con la zona de Colombia (UTC−05:00, sin horario de verano). */
 function colombiaTimestamp(d = new Date()) {
   const t = new Date(d.getTime() - 5 * 60 * 60 * 1000).toISOString().slice(0, 19);
@@ -797,4 +873,5 @@ setupLightbox();
 setupContactForm();
 setupLegalReader();
 setupPlaceGalleries();
+setupToForm();
 setupConsent({ mapsEmbedUrl: config.contact.mapsEmbedUrl });

@@ -271,8 +271,8 @@ def page(d, here, alt_here, wa_href, extra_head_ld=''):
     <link rel="stylesheet" href="{prefix}src/styles/tokens.css?v=2" />
     <link rel="stylesheet" href="{prefix}src/styles/base.css" />
     <link rel="stylesheet" href="{prefix}src/styles/components.css?v=2" />
-    <link rel="stylesheet" href="{prefix}src/styles/sections.css?v=6" />
-    <link rel="stylesheet" href="{prefix}src/styles/extras.css?v=8" />
+    <link rel="stylesheet" href="{prefix}src/styles/sections.css?v=10" />
+    <link rel="stylesheet" href="{prefix}src/styles/extras.css?v=10" />
     <link rel="stylesheet" href="{prefix}src/styles/policies.css?v=2" />
     <script type="application/ld+json">
       {crumb}
@@ -306,7 +306,7 @@ def page(d, here, alt_here, wa_href, extra_head_ld=''):
           <p class="eyebrow">{d['eyebrow']}</p>
           <h1 class="h2">{d['h1']}</h1>
           <p class="lead">{d['intro']}</p>{notice}
-          <a class="btn btn--sm" href="{wa_href}" data-wa="amari" target="_blank" rel="noopener">
+          <a class="btn btn--sm" href="{home_href}#consulta">
             <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
             {d['wa']}
           </a>{note}
@@ -335,7 +335,7 @@ def page(d, here, alt_here, wa_href, extra_head_ld=''):
       </div>
     </footer>
 
-    <script type="module" src="{prefix}src/js/main.js?v=7"></script>
+    <script type="module" src="{prefix}src/js/main.js?v=9"></script>
   </body>
 </html>
 """

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-sEbc6UqGsZQyK3BfL7TqWzgOfJC9F9mRGzhoEtkxyHU='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Amari Living Suites | Hotel en Barranquilla</title>
-    <meta name="description" content="Amari Living Suites, hotel en Barranquilla con suites equipadas con cocineta, cowork y sala de juntas. Consulta nuestros servicios y reserva tu estadía." />
+    <meta name="description" content="Amari Living Suites, hotel en Barranquilla con suites equipadas con cocineta, coworking y sala de juntas. Consulta nuestros servicios y reserva tu estadía." />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://amarilivingsuite.com/" />
     <link rel="alternate" hreflang="es" href="https://amarilivingsuite.com/" />
@@ -36,8 +36,8 @@
     <link rel="stylesheet" href="src/styles/tokens.css?v=2" />
     <link rel="stylesheet" href="src/styles/base.css" />
     <link rel="stylesheet" href="src/styles/components.css?v=2" />
-    <link rel="stylesheet" href="src/styles/sections.css?v=7" />
-    <link rel="stylesheet" href="src/styles/extras.css?v=8" />
+    <link rel="stylesheet" href="src/styles/sections.css?v=10" />
+    <link rel="stylesheet" href="src/styles/extras.css?v=10" />
     <link rel="stylesheet" href="src/styles/hero-reel.css?v=3" />
     <link rel="stylesheet" href="src/styles/intro.css?v=4" />
     <link rel="stylesheet" href="src/styles/motion.css" />
@@ -111,7 +111,7 @@
               },
               {
                 "@type": "LocationFeatureSpecification",
-                "name": "Cowork",
+                "name": "Coworking",
                 "value": true
               },
               {
@@ -255,7 +255,7 @@
         <ul role="list">
           <li><a href="#inicio" data-menu-link>Inicio</a></li>
           <li><a href="#suites" data-menu-link>Suites</a></li>
-          <li><a href="#servicios" data-menu-link>Servicios y cowork</a></li>
+          <li><a href="#servicios" data-menu-link>Servicios y coworking</a></li>
           <li><a href="#galeria" data-menu-link>Galería</a></li>
           <li><a href="#beneficios" data-menu-link>Beneficios</a></li>
           <li><a href="#barranquilla" data-menu-link>Conoce Barranquilla</a></li>
@@ -269,7 +269,7 @@
           Reservar en línea
           <svg class="icon btn__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
         </a>
-        <a class="btn btn--ghost-light btn--block" href="https://wa.me/573023307939?text=Hola%2C%20me%20gustar%C3%ADa%20hospedarme%20en%20Amari%20Living%20Suites.%20%C2%BFMe%20ayudan%20a%20consultar%20disponibilidad%20y%20opciones%20de%20reserva%3F" data-wa="amari" target="_blank" rel="noopener">
+        <a class="btn btn--ghost-light btn--block" href="#consulta" data-to-form data-menu-link>
           <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
           Escríbenos por WhatsApp
         </a>
@@ -302,7 +302,7 @@
 
       <!-- Barra de consulta (escritorio) — se envía por WhatsApp, no confirma reservas -->
       <div class="quickbar-wrap container">
-        <form class="quickbar intro intro--5" data-booking-form aria-label="Consultar disponibilidad por WhatsApp" novalidate>
+        <form class="quickbar intro intro--5" id="consulta" data-booking-form aria-label="Consultar disponibilidad por WhatsApp" novalidate>
           <div class="quickbar__field">
             <svg class="icon" aria-hidden="true"><use href="#i-user" /></svg>
             <label>
@@ -351,7 +351,7 @@
       <section class="highlights" aria-label="Lo esencial de Amari">
         <ul class="highlights__list container" role="list" data-stagger>
           <li><a href="#suites"><svg class="icon" aria-hidden="true"><use href="#i-bed" /></svg><span>Suites con cocineta</span></a></li>
-          <li><a href="#espacios-de-trabajo"><svg class="icon" aria-hidden="true"><use href="#i-laptop" /></svg><span>Cowork por horas</span></a></li>
+          <li><a href="#espacios-de-trabajo"><svg class="icon" aria-hidden="true"><use href="#i-laptop" /></svg><span>Coworking por horas</span></a></li>
           <li><a href="#beneficios"><svg class="icon" aria-hidden="true"><use href="#i-coffee" /></svg><span>Restaurante-café aliado</span></a></li>
           <li><a href="#beneficios"><svg class="icon" aria-hidden="true"><use href="#i-washer" /></svg><span>Lavandería aliada</span></a></li>
           <li><a href="#ubicacion"><svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg><span>Ubicación estratégica</span></a></li>
@@ -535,7 +535,7 @@
         </div>
       </section>
 
-      <!-- ===================== SERVICIOS (incluye cowork y sala de juntas) ===================== -->
+      <!-- ===================== SERVICIOS (incluye coworking y sala de juntas) ===================== -->
       <section class="section services" id="servicios" aria-labelledby="services-title">
         <div class="container">
           <header class="section-head">
@@ -625,11 +625,11 @@
           </div>
 
 
-          <!-- Cowork y sala de juntas (por horas) -->
+          <!-- Coworking y sala de juntas (por horas) -->
           <div class="workspaces work-panel on-dark" id="espacios-de-trabajo">
             <div class="work-panel__intro">
               <p class="eyebrow" data-reveal>Espacios de trabajo · Por horas</p>
-              <h3 class="h2 work-panel__title" data-reveal>Cowork y <em>sala de juntas</em></h3>
+              <h3 class="h2 work-panel__title" data-reveal>Coworking y <em>sala de juntas</em></h3>
               <p class="lead" data-reveal>
                 Dos espacios disponibles por horas para tus jornadas de trabajo y reuniones en Barranquilla. Escríbenos
                 para consultar disponibilidad y reservar.
@@ -638,7 +638,7 @@
             <div class="workspaces__grid">
                 <article class="workspace" data-reveal>
                   <svg class="icon workspace__icon" aria-hidden="true"><use href="#i-laptop" /></svg>
-                  <h4 class="h3">Cowork</h4>
+                  <h4 class="h3">Coworking</h4>
                   <p>
                     Un espacio de coworking en el rooftop de Amari para concentrarte, avanzar en tus pendientes y trabajar
                     cómodo durante tu viaje.
@@ -647,7 +647,7 @@
                     <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
                     <span data-rate="cowork">Consulta la tarifa por hora</span>
                   </div>
-                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hola%2C%20quisiera%20consultar%20la%20disponibilidad%20y%20la%20tarifa%20por%20hora%20del%20cowork%20de%20Amari%20Living%20Suites." data-wa="cowork" target="_blank" rel="noopener">
+                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20de%20Amari%20Living%20Suites%20y%20me%20interesa%20el%20servicio%20de%20coworking.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20tarifas%20por%20hora%3F" data-wa="cowork" target="_blank" rel="noopener">
                     <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                     Consultar disponibilidad
                   </a>
@@ -664,7 +664,7 @@
                     <svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>
                     <span data-rate="meeting">Consulta la tarifa por hora</span>
                   </div>
-                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hola%2C%20quisiera%20consultar%20la%20disponibilidad%20y%20la%20tarifa%20por%20hora%20de%20la%20sala%20de%20juntas%20de%20Amari%20Living%20Suites." data-wa="meeting" target="_blank" rel="noopener">
+                  <a class="btn btn--gold" href="https://wa.me/573023307939?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20de%20Amari%20Living%20Suites%20y%20me%20interesa%20reservar%20la%20sala%20de%20juntas.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20tarifas%20por%20hora%3F" data-wa="meeting" target="_blank" rel="noopener">
                     <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                     Consultar disponibilidad
                   </a>
@@ -715,13 +715,13 @@
               <p class="eyebrow" data-reveal>Aliados Amari</p>
               <h2 class="h2" id="allies-title" data-reveal>Beneficios que <em>hacen tu estadía más fácil</em></h2>
               <p class="lead" data-reveal>
-                Ser huésped de Amari tiene ventajas. Nuestros negocios aliados te ofrecen un descuento exclusivo durante tu
+                Ser huésped de Amari tiene ventajas. Nuestros negocios aliados te ofrecen beneficios exclusivos durante tu
                 estadía.
               </p>
             </div>
-            <div class="discount" data-reveal role="group" aria-label="10 % de descuento para huéspedes">
+            <div class="discount" data-reveal role="group" aria-label="10 % de descuento para huéspedes en la lavandería aliada">
               <span class="discount__value"><span data-count-to="10">10</span><small>%</small></span>
-              <span class="discount__label">de descuento para huéspedes en el restaurante-café y la lavandería</span>
+              <span class="discount__label">de descuento para huéspedes en la lavandería aliada</span>
             </div>
           </div>
 
@@ -729,7 +729,7 @@
             <article class="ally ally--restaurant" data-reveal>
               <div class="ally__visual ally__visual--photo">
                 <img class="ally__photo" src="public/img/aliados/selah-plato-640.jpg" alt="Tostada con huevo, aguacate y tocineta servida en un plato de Selah Bistró &amp; Café" width="640" height="640" loading="lazy" decoding="async" />
-                <span class="ally__badge" aria-hidden="true">-10 %</span>
+                <span class="ally__badge" aria-hidden="true">Promociones</span>
               </div>
               <div class="ally__body">
                 <p class="ally__kicker">Restaurante-café</p>
@@ -738,9 +738,9 @@
                   Una pausa para el café, un almuerzo tranquilo o una comida sin complicaciones mientras te hospedas en
                   Barranquilla.
                 </p>
-                <p class="ally__benefit"><strong>10 % de descuento</strong> para huéspedes de Amari Living Suites.</p>
+                <p class="ally__benefit"><strong>Accede a promociones</strong> por ser huésped de Amari Living Suites.</p>
                 <div class="ally__actions">
-                  <a class="btn btn--sm" href="https://wa.me/573004272643?text=Hola%2C%20soy%20hu%C3%A9sped%20de%20Amari%20Living%20Suites%20y%20quisiera%20consultar%20sobre%20el%20beneficio%20del%2010%20%25%20de%20descuento%20y%20los%20servicios%20del%20restaurante-caf%C3%A9." data-wa="restaurant" data-pending-label="WhatsApp del restaurante por confirmar" target="_blank" rel="noopener">
+                  <a class="btn btn--sm" href="https://wa.me/573004272643?text=Hola%2C%20soy%20hu%C3%A9sped%20de%20Amari%20Living%20Suites%20y%20quisiera%20conocer%20las%20promociones%20para%20hu%C3%A9spedes%20y%20los%20servicios%20del%20restaurante-caf%C3%A9." data-wa="restaurant" data-pending-label="WhatsApp del restaurante por confirmar" target="_blank" rel="noopener">
                     <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                     Escribir al restaurante-café
                   </a>
@@ -1248,7 +1248,7 @@
               </li>
             </ul>
             <div class="location__ctas" data-reveal>
-              <a class="btn" href="https://wa.me/573023307939?text=Hola%2C%20me%20gustar%C3%ADa%20hospedarme%20en%20Amari%20Living%20Suites.%20%C2%BFMe%20ayudan%20a%20consultar%20disponibilidad%20y%20opciones%20de%20reserva%3F" data-wa="amari" target="_blank" rel="noopener">
+              <a class="btn" href="#consulta" data-to-form>
                 <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
                 Escríbenos por WhatsApp
               </a>
@@ -1390,7 +1390,7 @@
           <ul role="list">
             <li><a href="#suites">Suites</a></li>
             <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#espacios-de-trabajo">Cowork y sala de juntas</a></li>
+            <li><a href="#espacios-de-trabajo">Coworking y sala de juntas</a></li>
             <li><a href="#galeria">Galería</a></li>
             <li><a href="#beneficios">Beneficios para huéspedes</a></li>
             <li><a href="#barranquilla">Conoce Barranquilla</a></li>
@@ -1444,14 +1444,14 @@
     <!-- Acciones persistentes -->
     <div class="mobile-bar" data-mobile-bar>
       <a class="btn btn--gold" href="https://hotels.cloudbeds.com/en/reservation/FuhJUM?currency=cop" data-booking target="_blank" rel="noopener">Reservar en línea</a>
-      <a class="btn btn--outline mobile-bar__wa" href="https://wa.me/573023307939?text=Hola%2C%20me%20gustar%C3%ADa%20hospedarme%20en%20Amari%20Living%20Suites.%20%C2%BFMe%20ayudan%20a%20consultar%20disponibilidad%20y%20opciones%20de%20reserva%3F" data-wa="amari" target="_blank" rel="noopener">
+      <a class="btn btn--outline mobile-bar__wa" href="#consulta" data-to-form>
         <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp" /></svg>
         WhatsApp
       </a>
     </div>
 
     <script type="module" src="src/js/intro.js?v=4"></script>
-    <script type="module" src="src/js/main.js?v=7"></script>
+    <script type="module" src="src/js/main.js?v=9"></script>
     <script type="module" src="src/js/motion.js"></script>
   </body>
 </html>

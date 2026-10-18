@@ -47,11 +47,12 @@ export const config = {
     pendingLabel: { es: 'Consulta la tarifa por hora', en: 'Ask for the hourly rate' },
   },
 
-  /* Contacto específico para cowork / sala de juntas.
+  /* Contacto específico para coworking / sala de juntas.
      null → se usa el WhatsApp oficial de Amari (indicado en el brief). */
   workspacesWhatsApp: null,
 
-  /* Negocios aliados — beneficio ✅ CONFIRMADO por el cliente: 10 % para huéspedes. */
+  /* Negocios aliados. ✅ CONFIRMADO por el cliente (18-oct-2026): 10 % para huéspedes solo en la
+     lavandería; el restaurante ofrece promociones para huéspedes, aún sin definir (no se publica un porcentaje). */
   allies: {
     discountPercent: 10,
     restaurant: {
@@ -77,11 +78,11 @@ export const config = {
       amari:
         'Hola, me gustaría hospedarme en Amari Living Suites. ¿Me ayudan a consultar disponibilidad y opciones de reserva?',
       cowork:
-        'Hola, quisiera consultar la disponibilidad y la tarifa por hora del cowork de Amari Living Suites.',
+        'Hola, vengo de la página web de Amari Living Suites y me interesa el servicio de coworking. ¿Me pueden dar información sobre disponibilidad y tarifas por hora?',
       meeting:
-        'Hola, quisiera consultar la disponibilidad y la tarifa por hora de la sala de juntas de Amari Living Suites.',
+        'Hola, vengo de la página web de Amari Living Suites y me interesa reservar la sala de juntas. ¿Me pueden dar información sobre disponibilidad y tarifas por hora?',
       restaurant:
-        'Hola, soy huésped de Amari Living Suites y quisiera consultar sobre el beneficio del 10 % de descuento y los servicios del restaurante-café.',
+        'Hola, soy huésped de Amari Living Suites y quisiera conocer las promociones para huéspedes y los servicios del restaurante-café.',
       laundry:
         'Hola, soy huésped de Amari Living Suites y quisiera consultar sobre el servicio de lavandería y el beneficio del 10 % de descuento.',
     },
@@ -89,11 +90,11 @@ export const config = {
       amari:
         'Hello, I would like to stay at Amari Living Suites. Could you help me check availability and booking options?',
       cowork:
-        'Hello, I would like to check the availability and hourly rate of the Amari Living Suites coworking space.',
+        'Hello, I found you on the Amari Living Suites website and I am interested in the coworking service. Could you tell me about availability and hourly rates?',
       meeting:
-        'Hello, I would like to check the availability and hourly rate of the Amari Living Suites meeting room.',
+        'Hello, I found you on the Amari Living Suites website and I am interested in booking the meeting room. Could you tell me about availability and hourly rates?',
       restaurant:
-        'Hello, I am a guest at Amari Living Suites and I would like to ask about the 10% discount and the restaurant-café services.',
+        'Hello, I am a guest at Amari Living Suites and I would like to know about the guest promotions and the restaurant-café services.',
       laundry:
         'Hello, I am a guest at Amari Living Suites and I would like to ask about the laundry service and the 10% discount.',
     },

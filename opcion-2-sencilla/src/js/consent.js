@@ -28,6 +28,13 @@ const T = {
     close: 'Cerrar',
     policy: 'Política de cookies',
     saved: 'Preferencias guardadas.',
+    bannerLabel: 'Aviso de cookies',
+    bannerTitle: 'Tu privacidad.',
+    bannerText:
+      'Usamos cookies solo con tu permiso: el mapa de Google, que muestra dónde está el hotel, puede instalarlas. No usamos cookies de analítica ni de publicidad.',
+    configure: 'Configurar',
+    rejectShort: 'Rechazar',
+    acceptShort: 'Aceptar',
   },
   en: {
     title: 'Cookie preferences',
@@ -43,6 +50,13 @@ const T = {
     close: 'Close',
     policy: 'Cookie policy',
     saved: 'Preferences saved.',
+    bannerLabel: 'Cookie notice',
+    bannerTitle: 'Your privacy.',
+    bannerText:
+      'We only use cookies with your permission: the Google map that shows where the hotel is may set them. We do not use analytics or advertising cookies.',
+    configure: 'Settings',
+    rejectShort: 'Reject',
+    acceptShort: 'Accept',
   },
 }[LANG];
 
@@ -66,6 +80,7 @@ function setConsent(choices) {
     /* Navegación privada o almacenamiento bloqueado: la elección vale solo para esta visita */
   }
   apply(c);
+  hideBanner();
   return c;
 }
 
@@ -162,6 +177,48 @@ function openPrefs(policyHref, opener) {
   else dialog.setAttribute('open', '');
 }
 
+/* ---------- Aviso de cookies (primera visita, o si la elección venció) ---------- */
+function hideBanner() {
+  document.querySelector('[data-cookie-banner]')?.remove();
+  document.documentElement.classList.remove('has-cookie-banner');
+}
+
+function showBanner() {
+  if (document.querySelector('[data-cookie-banner]')) return;
+  const policyHref = document.querySelector('[data-cookie-prefs]')?.dataset.policy || '#';
+  const b = document.createElement('section');
+  b.className = 'cookie-banner';
+  b.dataset.cookieBanner = '';
+  b.setAttribute('aria-label', T.bannerLabel);
+  b.innerHTML = `
+    <p class="cookie-banner__text"><strong>${T.bannerTitle}</strong> ${T.bannerText} <a href="${policyHref}">${T.policy}</a>.</p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--sm btn--outline" type="button" data-banner="config">${T.configure}</button>
+      <button class="btn btn--sm btn--outline" type="button" data-banner="reject">${T.rejectShort}</button>
+      <button class="btn btn--sm" type="button" data-banner="accept">${T.acceptShort}</button>
+    </div>`;
+  b.addEventListener('click', (e) => {
+    const action = e.target.closest('[data-banner]')?.dataset.banner;
+    if (action === 'accept') setConsent({ maps: true });
+    if (action === 'reject') setConsent({ maps: false });
+    if (action === 'config') openPrefs(policyHref, e.target.closest('button'));
+  });
+  document.body.append(b);
+  document.documentElement.classList.add('has-cookie-banner');
+}
+
+/** Muestra el aviso cuando termina la animación de entrada (o de inmediato si no hay). */
+function scheduleBanner() {
+  const root = document.documentElement;
+  const splash = document.querySelector('[data-splash]');
+  if (!splash || root.classList.contains('splash-done') || root.classList.contains('no-splash')) {
+    showBanner();
+    return;
+  }
+  document.addEventListener('amari:splash-done', showBanner, { once: true });
+  setTimeout(showBanner, 4500); // respaldo
+}
+
 /**
  * @param {{ mapsEmbedUrl: string }} opts
  *   El enlace a la política sale del atributo data-policy del botón «Preferencias de cookies».
@@ -179,5 +236,7 @@ export function setupConsent({ mapsEmbedUrl }) {
     b.addEventListener('click', () => openPrefs(b.dataset.policy || '#', b))
   );
 
-  apply(getConsent());
+  const current = getConsent();
+  apply(current);
+  if (!current) scheduleBanner();
 }
