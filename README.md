@@ -115,7 +115,7 @@ En cada versión, **todo** está en `src/js/config.js`. Hay que editarlo en las 
 ## ⏳ Pendiente de confirmar antes de publicar
 
 1. **Licencia de IvyMode**: el archivo viene de la propia web del cliente. Conviene confirmar que su licencia web cubre el nuevo sitio.
-2. **Restaurante-café**: falta su nombre comercial y su WhatsApp. Por ahora el botón (solo en Full) aparece como "por confirmar" y no lleva enlace.
+2. **Restaurante-café**: ✅ confirmado en la versión Full: **Selah Bistró & Café**, WhatsApp +57 300 427 2643 e Instagram [@meetselah](https://www.instagram.com/meetselah/). Se configura en `opcion-1-full/src/js/config.js`. En la versión Sencilla sigue apareciendo como "Restaurante-café aliado". Si quieres el nombre también ahí, se cambia en su `config.js`.
 3. **Lavandería**: falta su nombre y su WhatsApp, igual que con el restaurante-café.
 4. **Tarifas de cowork y sala de juntas**: no están publicadas. Por ahora se muestra "Consulta la tarifa por hora".
 5. **Fotos del cowork, la sala de juntas, el restaurante y la lavandería**: no existen fotos reales. Esas secciones usan bloques gráficos con los colores de la marca, no fotos de otros lugares.

@@ -1,4 +1,4 @@
-import { config } from './config.js';
+import { config } from './config.js?v=2';
 
 /* ============================================================
    Utilidades
@@ -147,6 +147,13 @@ function hydrateLinks() {
     if (icon) el.append(icon);
     el.append(document.createTextNode(label));
     console.warn(`[Amari] WhatsApp "${key}" pendiente: configure el número en src/js/config.js`);
+  });
+
+  // Instagram de aliados (solo se muestra si hay enlace confirmado)
+  $$('[data-instagram]').forEach((el) => {
+    const ally = config.allies[el.dataset.instagram];
+    if (ally && ally.instagram) el.href = ally.instagram;
+    else el.remove();
   });
 
   // Tarifas por hora

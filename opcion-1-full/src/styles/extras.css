@@ -642,3 +642,15 @@
   min-height: 40px;
   text-decoration: none;
 }
+
+/* ---------- Aliados: botones (WhatsApp + Instagram) ---------- */
+.ally__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: var(--space-2);
+}
+
+.ally__actions .btn {
+  margin-top: 0;
+}

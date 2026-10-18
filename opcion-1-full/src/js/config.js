@@ -55,12 +55,13 @@ export const config = {
   allies: {
     discountPercent: 10,
     restaurant: {
-      /* ⏳ PENDIENTE: nombre comercial real. */
-      name: null,
+      /* ✅ CONFIRMADO por el cliente (18-oct-2026). */
+      name: 'Selah Bistró & Café',
       fallbackName: { es: 'Restaurante-café aliado', en: 'Partner restaurant-café' },
-      /* ⏳ PENDIENTE: WhatsApp oficial del restaurante-café (formato 57XXXXXXXXXX).
-         NO usar el número de Amari aquí. */
-      whatsapp: null,
+      /* ✅ CONFIRMADO por el cliente: +57 300 427 2643. NO usar el número de Amari aquí. */
+      whatsapp: '573004272643',
+      /* ✅ CONFIRMADO por el cliente. Solo se muestra en la versión Full. */
+      instagram: 'https://www.instagram.com/meetselah/',
     },
     laundry: {
       /* ⏳ PENDIENTE: nombre comercial real. */
