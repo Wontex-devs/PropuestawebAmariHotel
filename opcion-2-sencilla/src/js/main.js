@@ -547,9 +547,12 @@ function setupGallery() {
 function setupHeroReel() {
   const pending = $$('.hero-reel__slide[data-src]');
   if (!pending.length) return;
+  // Cada foto se descarga y se decodifica ANTES de insertarla, para que al
+  // aparecer no haya cuadros vacíos ni tirones. El movimiento lo hace el
+  // contenedor (CSS), así que insertar la imagen no reinicia ninguna animación.
   const load = () =>
     pending.forEach((slide) => {
-      const img = document.createElement('img');
+      const img = new Image();
       if (slide.dataset.srcset) img.srcset = slide.dataset.srcset;
       img.sizes = '100vw';
       img.alt = '';
@@ -557,13 +560,21 @@ function setupHeroReel() {
       img.height = 1067;
       img.decoding = 'async';
       img.draggable = false;
+      img.fetchPriority = 'low';
       img.src = slide.dataset.src;
       slide.removeAttribute('data-src');
       slide.removeAttribute('data-srcset');
-      slide.append(img);
+      const put = () => slide.append(img);
+      (img.decode ? img.decode() : Promise.resolve()).then(put, put);
     });
-  if (document.readyState === 'complete') setTimeout(load, 150);
-  else window.addEventListener('load', () => setTimeout(load, 150), { once: true });
+  // La primera foto tiene prioridad; las demás empiezan apenas ella esté lista
+  const first = $('.hero-reel__slide img');
+  if (first && !first.complete) {
+    first.addEventListener('load', () => setTimeout(load, 50), { once: true });
+    first.addEventListener('error', load, { once: true });
+  } else {
+    setTimeout(load, 50);
+  }
 
   // Sin menú contextual ni arrastre sobre el reel (no es un video manipulable)
   $$('.hero-reel').forEach((reel) => reel.addEventListener('contextmenu', (e) => e.preventDefault()));

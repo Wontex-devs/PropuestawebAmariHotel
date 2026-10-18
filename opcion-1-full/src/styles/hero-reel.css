@@ -29,8 +29,16 @@
   margin: 0;
   opacity: 0;
   z-index: 1;
-  animation: reel-fade 24s linear infinite;
-  animation-delay: calc(var(--i) * 4s - 1.2s);
+  overflow: hidden;
+  /* Fundido y movimiento de cámara en el MISMO elemento: van siempre
+     sincronizados, aunque la foto se inserte después (sin saltos). */
+  transform-origin: var(--origin, 50% 50%);
+  animation:
+    reel-fade 24s linear infinite,
+    reel-camera 24s linear infinite;
+  animation-delay: calc(var(--i) * 4s - 1.2s), calc(var(--i) * 4s - 1.2s);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
 /* La primera escena es visible desde el primer pintado (antes de que corra la animación) */
@@ -44,10 +52,6 @@
   object-fit: cover;
   object-position: var(--pos, 50% 50%);
   -webkit-user-drag: none;
-  transform-origin: var(--origin, 50% 50%);
-  animation: reel-camera 24s linear infinite;
-  animation-delay: calc(var(--i) * 4s - 1.2s);
-  will-change: transform;
 }
 
 /* Mientras una foto aún no se ha cargado, no se muestra (evita cuadros vacíos) */
