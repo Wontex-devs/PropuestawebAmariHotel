@@ -1,0 +1,8 @@
+# Documentos originales del cliente (no se publican)
+contenido compartido por el clienet/
+
+# Sistema / editores
+.DS_Store
+**/.DS_Store
+.claude/
+node_modules/

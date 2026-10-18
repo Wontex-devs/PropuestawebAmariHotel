@@ -1,0 +1,103 @@
+/* =============================================================
+   HERO "REEL" — secuencia cinematográfica de fotos reales del hotel
+   Se ve como un video, pero son imágenes: no tiene controles, no se
+   puede pausar, arrastrar ni seleccionar. 100 % CSS (bucle infinito).
+
+   6 escenas × 4 s = ciclo de 24 s.
+   Cada escena: fundido de entrada (1,2 s) por ENCIMA de la anterior,
+   movimiento de cámara lento (zoom + paneo, estilo Ken Burns) y la
+   anterior desaparece solo cuando la nueva ya es opaca → sin destellos
+   oscuros entre fotos.
+
+   Porcentajes sobre 24 s:  1,2 s = 5 %  ·  4 s = 16,67 %  ·  5,2 s = 21,67 %
+   Retardo de cada escena: i × 4 s − 1,2 s (la primera arranca ya visible).
+   ============================================================= */
+
+.hero-reel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none; /* sin interacción posible */
+  user-select: none;
+  -webkit-user-select: none;
+  background: var(--gray-900);
+}
+
+.hero-reel__slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  z-index: 1;
+  animation: reel-fade 24s linear infinite;
+  animation-delay: calc(var(--i) * 4s - 1.2s);
+}
+
+/* La primera escena es visible desde el primer pintado (antes de que corra la animación) */
+.hero-reel__slide:first-child {
+  opacity: 1;
+}
+
+.hero-reel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--pos, 50% 50%);
+  -webkit-user-drag: none;
+  transform-origin: var(--origin, 50% 50%);
+  animation: reel-camera 24s linear infinite;
+  animation-delay: calc(var(--i) * 4s - 1.2s);
+  will-change: transform;
+}
+
+/* Mientras una foto aún no se ha cargado, no se muestra (evita cuadros vacíos) */
+.hero-reel__slide img:not([src]) {
+  visibility: hidden;
+}
+
+@keyframes reel-fade {
+  0% {
+    opacity: 0;
+    z-index: 3;
+  }
+  5% {
+    opacity: 1;
+  }
+  16.66% {
+    z-index: 3;
+  }
+  16.67% {
+    opacity: 1;
+    z-index: 2;
+  }
+  21.66% {
+    opacity: 1;
+  }
+  21.67%,
+  100% {
+    opacity: 0;
+    z-index: 1;
+  }
+}
+
+@keyframes reel-camera {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  21.67%,
+  100% {
+    transform: scale(1.14) translate3d(var(--tx, 0), var(--ty, 0), 0);
+  }
+}
+
+/* Movimiento reducido: solo la primera foto, fija */
+@media (prefers-reduced-motion: reduce) {
+  .hero-reel__slide,
+  .hero-reel__slide img {
+    animation: none !important;
+  }
+
+  .hero-reel__slide:not(:first-child) {
+    display: none;
+  }
+}

@@ -1,0 +1,277 @@
+/* =============================================================
+   ANIMACIÓN DE INICIO — logotipo oficial
+   Se usa siempre la MISMA imagen del logo oficial, recortada por
+   letra con clip-path. Al terminar, todas las capas coinciden en
+   píxeles con el logotipo completo: no se redibuja ni se deforma.
+
+   Coreografía (~2 s):
+   1. La "A" aparece sola, centrada (escala + desenfoque → nítida).
+   2. La "A" se desliza a la izquierda y, desde su borde derecho,
+      la palabra se desenrolla horizontalmente: M · A · R · I.
+      Una línea de luz dorada (#F1A622) viaja en el borde del revelado
+      y cada letra se asienta con un leve desfase.
+   3. Un destello dorado recorre la palabra completa.
+   4. "Living Suites" se abre desde el centro con una línea dorada fina.
+   5. La cortina negra sube y revela la página.
+
+   Medidas tomadas del PNG oficial (1652 × 629 px):
+   letras: A 4–339 · M 382–795 · A 843–1179 · R 1226–1499 · I 1567–1647
+   filas: palabra 3–372 · "Living Suites" 523–624
+   Cortes (%): A|M 21.82 · M|A 49.58 · A|R 72.79 · R|I 92.80 · palabra/lema 71.15
+   ============================================================= */
+
+.splash {
+  display: none;
+}
+
+.js:not(.no-splash) .splash {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: var(--amari-black);
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.85s var(--ease-in-out);
+  cursor: pointer;
+}
+
+.splash.is-out {
+  clip-path: inset(0 0 100% 0);
+  pointer-events: none;
+}
+
+.splash__logo {
+  position: relative;
+  width: clamp(250px, 38vw, 480px);
+  aspect-ratio: 1652 / 629;
+  transition:
+    translate 0.85s var(--ease-in-out),
+    opacity 0.55s var(--ease-out);
+}
+
+.splash.is-out .splash__logo {
+  translate: 0 -48px;
+  opacity: 0;
+}
+
+/* Todo el logotipo empieza desplazado para que la "A" quede centrada */
+.splash__track {
+  position: absolute;
+  inset: 0;
+  translate: 39.62% 0;
+  animation: splash-track 0.85s var(--ease-in-out) 0.65s forwards;
+}
+
+@keyframes splash-track {
+  to {
+    translate: 0 0;
+  }
+}
+
+.splash__logo > img,
+.splash__track img,
+.splash__word img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ---------- 1. La "A" ---------- */
+.splash__a {
+  clip-path: inset(0 78.18% 28.85% 0);
+  opacity: 0;
+  animation: splash-a-in 0.6s var(--ease-out) 0.1s forwards;
+}
+
+@keyframes splash-a-in {
+  from {
+    opacity: 0;
+    scale: 1.3;
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+/* ---------- 2. La palabra se desenrolla desde la A ---------- */
+.splash__word {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 78.5% 28.85% 21.82%);
+  animation: splash-unroll 0.85s var(--ease-in-out) 0.65s forwards;
+}
+
+@keyframes splash-unroll {
+  to {
+    clip-path: inset(0 0 28.85% 21.82%);
+  }
+}
+
+.splash__l {
+  opacity: 0.15;
+  translate: -7% 0;
+  filter: blur(4px);
+  animation: splash-settle 0.7s var(--ease-out) forwards;
+  animation-delay: calc(0.7s + var(--i) * 0.09s);
+}
+
+.splash__l--m {
+  clip-path: inset(0 50.42% 0 21.82%);
+  --i: 0;
+}
+
+.splash__l--a {
+  clip-path: inset(0 27.21% 0 49.58%);
+  --i: 1;
+}
+
+.splash__l--r {
+  clip-path: inset(0 7.2% 0 72.79%);
+  --i: 2;
+}
+
+.splash__l--i {
+  clip-path: inset(0 0 0 92.8%);
+  --i: 3;
+}
+
+@keyframes splash-settle {
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
+}
+
+/* Línea de luz en el borde del revelado */
+.splash__edge {
+  position: absolute;
+  top: -6%;
+  bottom: 24%;
+  left: 21.82%;
+  width: 2px;
+  margin-left: -1px;
+  background: linear-gradient(180deg, transparent, var(--amari-gold) 20%, var(--amari-gold) 80%, transparent);
+  box-shadow: 0 0 18px 2px rgba(241, 166, 34, 0.55);
+  opacity: 0;
+  animation: splash-edge 0.85s var(--ease-in-out) 0.65s forwards;
+}
+
+@keyframes splash-edge {
+  0% {
+    left: 21.82%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* ---------- 3. Destello dorado sobre la palabra ---------- */
+.splash__shine {
+  position: absolute;
+  inset: 0 0 28.85% 0;
+  pointer-events: none;
+  -webkit-mask: url('../../public/brand/amari-logo-white.png') 0 0 / 100% calc(100% / 0.7115) no-repeat;
+  mask: url('../../public/brand/amari-logo-white.png') 0 0 / 100% calc(100% / 0.7115) no-repeat;
+  background: linear-gradient(100deg, transparent 38%, var(--amari-gold) 50%, transparent 62%) no-repeat;
+  background-size: 250% 100%;
+  background-position: 120% 0;
+  opacity: 0;
+  animation: splash-shine 0.75s var(--ease-in-out) 1.4s forwards;
+}
+
+@keyframes splash-shine {
+  0% {
+    opacity: 1;
+    background-position: 120% 0;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background-position: -20% 0;
+  }
+}
+
+/* ---------- 4. "Living Suites" ---------- */
+.splash__tag {
+  clip-path: inset(71.15% 50% 0 50%);
+  opacity: 0;
+  animation: splash-tag 0.7s var(--ease-out) 1.35s forwards;
+}
+
+@keyframes splash-tag {
+  to {
+    clip-path: inset(71.15% 0 0 0);
+    opacity: 1;
+  }
+}
+
+.splash__rule {
+  position: absolute;
+  left: 50%;
+  top: 77%;
+  width: 34%;
+  height: 1px;
+  background: var(--amari-gold);
+  translate: -50% 0;
+  scale: 0 1;
+  opacity: 0;
+  animation: splash-rule 0.95s var(--ease-out) 1.25s forwards;
+}
+
+@keyframes splash-rule {
+  0% {
+    scale: 0 1;
+    opacity: 1;
+  }
+  45% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 1.6 1;
+    opacity: 0;
+  }
+}
+
+.splash__skip {
+  position: absolute;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  left: 50%;
+  translate: -50% 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  opacity: 0;
+  animation: splash-fade 0.5s ease 0.8s forwards;
+}
+
+@keyframes splash-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash {
+    display: none !important;
+  }
+}

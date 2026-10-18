@@ -1,0 +1,15 @@
+{
+  "name": "amari-living-suites-sencilla",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Amari Living Suites — versión sencilla. Sitio estático sin dependencias (HTML, CSS y JavaScript nativos).",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs 5174",
+    "dev": "node server.mjs 5174",
+    "serve:python": "python3 -m http.server 5174"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

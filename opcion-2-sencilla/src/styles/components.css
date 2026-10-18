@@ -1,0 +1,516 @@
+/* ============ Encabezado ============ */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--header-h);
+  color: var(--amari-white);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    height var(--dur) var(--ease-out);
+}
+
+.site-header::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.18);
+  transition: background-color var(--dur);
+}
+
+.site-header.is-solid {
+  background: rgba(255, 251, 244, 0.94);
+  color: var(--amari-black);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  backdrop-filter: saturate(140%) blur(10px);
+  --header-h: 72px;
+}
+
+.site-header.is-solid::after {
+  background: var(--color-line);
+}
+
+.site-header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.site-header__logo {
+  position: relative;
+  display: block;
+  width: 168px; /* ≥ tamaño mínimo digital del manual */
+  flex: none;
+}
+
+.site-header__logo .logo {
+  width: 100%;
+  height: auto;
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+.site-header__logo .logo--dark {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.site-header.is-solid .logo--light,
+body.menu-open .site-header .logo--light {
+  opacity: 0;
+}
+
+.site-header.is-solid .logo--dark {
+  opacity: 1;
+}
+
+body.menu-open .site-header .logo--dark {
+  opacity: 0;
+}
+
+body.menu-open .site-header .logo--light {
+  opacity: 1;
+}
+
+.site-nav {
+  position: relative;
+}
+
+.site-nav__list {
+  display: flex;
+  gap: clamp(1rem, 2vw, 2.25rem);
+}
+
+.site-nav__list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity var(--dur-fast);
+}
+
+.site-nav__list a:hover,
+.site-nav__list a[aria-current='true'] {
+  opacity: 1;
+}
+
+.site-nav__indicator {
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  height: 1.5px;
+  width: 0;
+  background: var(--amari-gold);
+  border-radius: 2px;
+  transform-origin: left;
+  transition:
+    transform var(--dur) var(--ease-out),
+    width var(--dur) var(--ease-out),
+    opacity var(--dur);
+  opacity: 0;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Botón "Reservar ahora": siempre píldora blanca con etiqueta espaciada y círculo dorado. */
+.site-header__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 48px;
+  padding: 5px 5px 5px 1.35rem;
+  border-radius: var(--radius-pill);
+  background: var(--amari-white);
+  color: var(--amari-black);
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.6);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+.site-header__cta-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--amari-gold);
+  color: var(--amari-black);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.site-header__cta-icon .icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.8;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.site-header__cta:hover {
+  box-shadow: 0 14px 34px -16px rgba(0, 0, 0, 0.55);
+}
+
+.site-header__cta:hover .site-header__cta-icon {
+  transform: scale(1.06);
+}
+
+/* Abre el motor de reservas en otra pestaña: la flecha se inclina hacia fuera */
+.site-header__cta:hover .site-header__cta-icon .icon {
+  transform: rotate(-45deg);
+}
+
+.site-header__cta:active .site-header__cta-icon {
+  transform: scale(0.94);
+}
+
+/* Siempre blanco con círculo naranja. Sobre el encabezado claro se
+   añade un borde fino para que no se pierda contra el fondo. */
+.site-header.is-solid .site-header__cta {
+  border: 1px solid var(--color-line);
+  box-shadow: 0 8px 22px -14px rgba(0, 0, 0, 0.35);
+}
+
+.menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  border-color: color-mix(in srgb, currentColor 35%, transparent);
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle__bars {
+  position: relative;
+  width: 20px;
+  height: 10px;
+}
+
+.menu-toggle__bars span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition:
+    transform var(--dur) var(--ease-out),
+    top var(--dur) var(--ease-out);
+}
+
+.menu-toggle__bars span:first-child {
+  top: 0;
+}
+
+.menu-toggle__bars span:last-child {
+  top: 8.5px;
+}
+
+.menu-toggle[aria-expanded='true'] .menu-toggle__bars span:first-child {
+  top: 4.25px;
+  transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded='true'] .menu-toggle__bars span:last-child {
+  top: 4.25px;
+  transform: rotate(-45deg);
+}
+
+body.menu-open .site-header {
+  color: var(--amari-white);
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.menu-open .site-header::after {
+  background: transparent;
+}
+
+@media (max-width: 1080px) {
+  .site-nav {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-header__logo {
+    width: 150px;
+  }
+}
+
+/* Reservar sigue visible en tableta; en móvil lo reemplaza la barra inferior */
+@media (max-width: 760px) {
+  .site-header__cta {
+    display: none !important;
+  }
+}
+
+/* ============ Menú móvil ============ */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--amari-black);
+  color: var(--amari-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--header-h) + 2rem) var(--gutter) calc(1.5rem + env(safe-area-inset-bottom));
+  overflow-y: auto;
+}
+
+.mobile-menu[hidden] {
+  display: none;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mobile-menu a[data-menu-link] {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.mobile-menu__num {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--amari-gold);
+}
+
+.mobile-menu__footer {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* ============ Marcos de imagen ============ */
+.frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--sage-100);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============ Campos de formulario ============ */
+.field {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 64px;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 14px;
+  background: var(--amari-white);
+  transition: border-color var(--dur-fast);
+}
+
+.field:focus-within {
+  border-color: var(--amari-black);
+}
+
+.field > .icon {
+  color: var(--gray-700);
+  width: 22px;
+  height: 22px;
+}
+
+.field__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.field__label {
+  font-size: 0.78rem;
+  color: var(--gray-700);
+  letter-spacing: 0.02em;
+}
+
+.field input,
+.field select,
+.quickbar input,
+.quickbar select {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0.15rem 0;
+  font-size: 1rem;
+  outline: none;
+  min-height: 28px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field select,
+.quickbar select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 1.25rem;
+}
+
+.field input::placeholder,
+.quickbar input::placeholder {
+  color: var(--gray-600);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+[aria-invalid='true'] {
+  color: var(--amari-terracotta);
+}
+
+.field:has([aria-invalid='true']),
+.quickbar__field:has([aria-invalid='true']) {
+  border-color: var(--amari-terracotta);
+}
+
+/* ============ Botón de icono ============ */
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-line-strong);
+  background: transparent;
+  transition:
+    background-color var(--dur-fast),
+    color var(--dur-fast),
+    transform var(--dur-fast);
+}
+
+.icon-btn:hover {
+  background: var(--amari-black);
+  color: var(--amari-white);
+}
+
+.icon-btn:active {
+  transform: scale(0.94);
+}
+
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background: transparent;
+  color: inherit;
+}
+
+/* ============ WhatsApp flotante y barra móvil ============ */
+.wa-float {
+  position: fixed;
+  right: max(1.25rem, env(safe-area-inset-right));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  z-index: 45;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--amari-black);
+  color: var(--amari-white);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform var(--dur) var(--ease-out),
+    background-color var(--dur),
+    color var(--dur);
+}
+
+.wa-float .icon {
+  width: 26px;
+  height: 26px;
+}
+
+.wa-float:hover {
+  background: var(--amari-gold);
+  color: var(--amari-black);
+  transform: translateY(-3px);
+}
+
+.mobile-bar {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .wa-float {
+    display: none;
+  }
+
+  .mobile-bar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 45;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-2);
+    padding: 0.65rem var(--gutter) calc(0.65rem + env(safe-area-inset-bottom));
+    background: rgba(255, 251, 244, 0.96);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--color-line);
+  }
+
+  .mobile-bar .btn {
+    min-height: 48px;
+  }
+
+  body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+
+  body.menu-open .mobile-bar {
+    display: none;
+  }
+}

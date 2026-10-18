@@ -1,0 +1,193 @@
+/* =============================================================
+   VERSIÓN SENCILLA — ajustes sobre los estilos compartidos
+   - Encabezado sólido, sin transiciones de entrada.
+   - Hero enmarcado y estático (sin efectos cinematográficos).
+   - Rejillas regulares, sin parallax ni apariciones escalonadas.
+   - Solo transiciones funcionales y breves (color / opacidad).
+   ============================================================= */
+
+/* ---------- Encabezado ----------
+   Igual que en Full: transparente sobre el hero y sólido al bajar
+   (solo cambio de color, sin animación de entrada). */
+.site-nav__list a[aria-current='true'] {
+  text-decoration: underline;
+  text-decoration-color: var(--amari-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.6em;
+}
+
+/* ---------- Hero a pantalla completa (igual que Full, sin entrada cinematográfica) ---------- */
+.hero__title em {
+  display: block;
+}
+
+/* ---------- Suites: rejilla regular ---------- */
+.suites__grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.suite-card,
+.suite-card:hover {
+  transform: none;
+  box-shadow: none;
+  transition: none;
+}
+
+.suite-card {
+  border: 1px solid var(--color-line);
+}
+
+.suite-card:hover .suite-card__media img,
+.details__item:hover img {
+  transform: none;
+}
+
+.suite-card__media img,
+.details__item img {
+  transition: none;
+}
+
+@media (max-width: 960px) {
+  .suites__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Servicios: rejilla simple ---------- */
+.bento {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+}
+
+.bento__item--a,
+.bento__item--b,
+.bento__item--c,
+.bento__item--d,
+.bento__item--e {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.bento__item--a {
+  grid-column: span 2;
+}
+
+figure.bento__item {
+  min-height: 320px;
+}
+
+figure.bento__item img {
+  top: 0;
+  height: 100%;
+}
+
+@media (max-width: 960px) {
+  .bento {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bento__item--a {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .bento {
+    grid-template-columns: 1fr;
+  }
+
+  .bento > * {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* ---------- Aliados ---------- */
+.ally--laundry {
+  transform: none;
+}
+
+.ally {
+  min-height: 300px;
+}
+
+/* ---------- Espacios de trabajo (versión clara) ---------- */
+.workspaces {
+  background: var(--sage-100);
+  color: var(--amari-black);
+}
+
+.workspaces .eyebrow,
+.workspaces .lead {
+  color: var(--color-text-soft);
+}
+
+.workspace {
+  background: var(--amari-white);
+  border-color: var(--color-line);
+}
+
+.workspace:hover {
+  border-color: var(--color-line-strong);
+}
+
+.workspace__num {
+  color: var(--gray-500);
+}
+
+.workspace__icon {
+  color: var(--amari-black);
+}
+
+.workspace p {
+  color: var(--color-text-soft);
+}
+
+.workspace__rate {
+  background: var(--gold-100);
+  color: var(--amari-black);
+}
+
+.workspace__rate .icon {
+  color: var(--amari-black);
+}
+
+.workspace .btn--gold {
+  --btn-bg-hover: var(--amari-black);
+  --btn-fg-hover: var(--amari-white);
+}
+
+/* ---------- Reserva ---------- */
+.booking {
+  background: var(--sage-100);
+}
+
+.booking-card {
+  box-shadow: none;
+  border: 1px solid var(--color-line);
+  background: var(--amari-white);
+}
+
+/* ---------- Menú móvil: apertura breve por opacidad ---------- */
+.mobile-menu {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+}
+
+/* ---------- Galería sin efectos ---------- */
+.gallery__track {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

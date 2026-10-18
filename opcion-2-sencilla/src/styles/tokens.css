@@ -1,0 +1,105 @@
+/* =============================================================
+   TOKENS DE MARCA — fuente: "Manual de marca amari final.pdf"
+   Paleta (pág. 14) · Tipografía (pág. 15) · Versiones del logo (pág. 16)
+   Los tintes (-50 … -200) siguen las escalas de la pág. 14
+   (cada color mezclado con blanco en pasos del 10 %).
+   ============================================================= */
+@font-face {
+  font-family: 'IvyMode Amari';
+  src: url('../../public/fonts/ivymode-regular.woff') format('woff');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Colores oficiales */
+  --amari-gold: #f1a622;        /* RGB 241/166/34 · Pantone 14-8 C */
+  --amari-terracotta: #c5635b;  /* RGB 197/99/91  · Pantone 52-13 C */
+  --amari-sage: #b0c7ba;        /* RGB 176/199/186 · Pantone 141-1 C */
+  --amari-black: #000000;       /* Process Black C */
+  --amari-white: #ffffff;
+
+  /* Tintes de la escala oficial */
+  --gold-50: #fffaf4;   /* 4 %  */
+  --gold-100: #fef6e9;  /* 10 % */
+  --gold-200: #fcedd3;  /* 20 % */
+  --terracotta-50: #fcf7f7;
+  --terracotta-100: #f9efef;
+  --terracotta-200: #f3e0de;
+  --sage-50: #f7f9f8;
+  --sage-100: #eff4f1;
+  --sage-200: #dfe9e3;
+  --gray-100: #e6e6e6;
+  --gray-300: #b3b3b3;
+  --gray-500: #808080;
+  --gray-600: #666666;
+  --gray-700: #4d4d4d;
+  --gray-800: #333333;
+  --gray-900: #1a1a1a;
+
+  /* Roles */
+  --color-bg: var(--gold-50);
+  --color-surface: var(--amari-white);
+  --color-surface-alt: var(--sage-50);
+  --color-text: var(--amari-black);
+  --color-text-soft: var(--gray-700);
+  --color-text-muted: var(--gray-600);
+  --color-line: rgba(0, 0, 0, 0.12);
+  --color-line-strong: rgba(0, 0, 0, 0.24);
+  --color-accent: var(--amari-gold);
+  --color-accent-2: var(--amari-terracotta);
+  --color-focus: var(--amari-terracotta);
+
+  /* Tipografía (manual de marca, pág. 15)
+     Logotipo/titulares: IvyMode. Archivo tomado de la web actual del cliente
+     (amarilivingsuite.com/font/c-ivy-mode-regular.woff). Confirmar licencia web.
+     Textos de contenido: Karla (Google Fonts, licencia OFL). */
+  --font-display: 'IvyMode Amari', 'ivymode', 'Times New Roman', serif;
+  --font-body: 'Karla', 'Helvetica Neue', Arial, sans-serif;
+
+  --fs-eyebrow: 0.75rem;
+  --fs-small: 0.875rem;
+  --fs-body: 1.0625rem;
+  --fs-lead: clamp(1.0625rem, 0.98rem + 0.35vw, 1.25rem);
+  --fs-h3: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+  --fs-h2: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
+  --fs-h1: clamp(2.6rem, 1.8rem + 3.6vw, 5.25rem);
+
+  --tracking-eyebrow: 0.32em; /* espaciado amplio, como los títulos del manual */
+
+  /* Espaciado y forma */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --section-y: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --gutter: clamp(1rem, 0.4rem + 2.6vw, 2.5rem);
+  --container: 1240px;
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: var(--radius); /* un solo radio en todo el sitio (18 px) */
+  --radius-pill: 999px;
+
+  --header-h: 84px;
+  --shadow-soft: 0 18px 50px -24px rgba(0, 0, 0, 0.25);
+  --shadow-card: 0 30px 70px -40px rgba(0, 0, 0, 0.35);
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 420ms;
+  --dur-slow: 1100ms;
+}
+
+@media (max-width: 860px) {
+  :root {
+    --header-h: 68px;
+  }
+}
