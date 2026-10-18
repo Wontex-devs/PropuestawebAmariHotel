@@ -251,24 +251,6 @@
   }
 }
 
-.splash__skip {
-  position: absolute;
-  bottom: calc(1.5rem + env(safe-area-inset-bottom));
-  left: 50%;
-  translate: -50% 0;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  opacity: 0;
-  animation: splash-fade 0.5s ease 0.8s forwards;
-}
-
-@keyframes splash-fade {
-  to {
-    opacity: 1;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .splash {
