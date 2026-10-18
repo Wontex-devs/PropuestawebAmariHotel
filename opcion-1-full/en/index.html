@@ -37,9 +37,9 @@
     <link rel="stylesheet" href="../src/styles/tokens.css?v=2" />
     <link rel="stylesheet" href="../src/styles/base.css" />
     <link rel="stylesheet" href="../src/styles/components.css?v=2" />
-    <link rel="stylesheet" href="../src/styles/sections.css?v=6" />
-    <link rel="stylesheet" href="../src/styles/extras.css?v=6" />
-    <link rel="stylesheet" href="../src/styles/hero-reel.css?v=2" />
+    <link rel="stylesheet" href="../src/styles/sections.css?v=7" />
+    <link rel="stylesheet" href="../src/styles/extras.css?v=7" />
+    <link rel="stylesheet" href="../src/styles/hero-reel.css?v=3" />
     <link rel="stylesheet" href="../src/styles/intro.css?v=4" />
     <link rel="stylesheet" href="../src/styles/motion.css" />
 
@@ -122,7 +122,9 @@
               }
             ],
             "sameAs": [
-              "https://www.youtube.com/@Amarilivingsuites"
+              "https://www.youtube.com/@Amarilivingsuites",
+              "https://www.instagram.com/amari.livingsuites/",
+              "https://www.facebook.com/profile.php?id=61553983423173"
             ],
             "potentialAction": {
               "@type": "ReserveAction",
@@ -183,6 +185,7 @@
       <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2" /><path d="M3 10h18M7 15h3" /></symbol>
       <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" /></symbol>
       <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" /></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z" /></symbol>
       <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6z" /></symbol>
       <symbol id="i-google" viewBox="0 0 24 24"><path d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z" fill="#4285F4"/><path d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z" fill="#34A853"/><path d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9.1z" fill="#FBBC05"/><path d="M12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.5l3.3 2.6C7.2 7.8 9.4 6 12 6z" fill="#EA4335"/></symbol>
       <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none" /></symbol>
@@ -716,9 +719,9 @@
 
           <div class="allies__grid">
             <article class="ally ally--restaurant" data-reveal>
-              <div class="ally__visual" aria-hidden="true">
-                <svg class="icon"><use href="#i-coffee" /></svg>
-                <span class="ally__badge">-10 %</span>
+              <div class="ally__visual ally__visual--photo">
+                <img class="ally__photo" src="../public/img/aliados/selah-plato-640.jpg" alt="Toast with egg, avocado and bacon served on a Selah Bistró &amp; Café plate" width="640" height="640" loading="lazy" decoding="async" />
+                <span class="ally__badge" aria-hidden="true">-10 %</span>
               </div>
               <div class="ally__body">
                 <p class="ally__kicker">Restaurant-café</p>
@@ -777,10 +780,29 @@
           </header>
           <div class="places" data-stagger>
             <article class="place">
-              <figure class="place__media">
-                <img src="../public/img/barranquilla/malecon.jpg" alt="Gran Malecón del Río, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:PlazadeLucesGranMaleconBarranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
-              </figure>
+              <div class="place__media place-gallery" data-place-gallery>
+                <div class="place-gallery__track" data-place-track tabindex="0" role="region" aria-label="Photos of Gran Malecón del Río">
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/malecon-1.jpg" alt="Sunset at the Jardín del Río in the Gran Malecón, with boats and flags" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Jard%C3%ADn_del_R%C3%ADo_Gran_Malec%C3%B3n_Barranquilla_2026-07-30-3.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/malecon-2.jpg" alt="Pink sunset sky over the Gran Malecón gardens" width="675" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Jard%C3%ADn_del_R%C3%ADo_Gran_Malec%C3%B3n_Barranquilla_2026-07-30-1.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/malecon-3.jpg" alt="Caimán del Río sculpture on the Gran Malecón" width="900" height="599" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Caiman_del_R%C3%ADo.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/malecon-4.jpg" alt="Paths and gardens by the Magdalena River on the Gran Malecón" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:GranMalecon2.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                </div>
+                <button class="place-gallery__btn place-gallery__btn--prev" type="button" data-place-prev aria-label="Previous photo" disabled><svg class="icon" aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                <button class="place-gallery__btn place-gallery__btn--next" type="button" data-place-next aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+                <span class="place-gallery__count" aria-hidden="true" data-place-count>1 / 4</span>
+              </div>
               <div class="place__body">
                 <h3 class="place__name">Gran Malecón del Río</h3>
                 <p class="place__desc">Five and a half kilometers along the Magdalena River for walking, cycling, dining and watching the sunset.</p>
@@ -789,10 +811,14 @@
               </div>
             </article>
             <article class="place">
-              <figure class="place__media">
-                <img src="../public/img/barranquilla/luna-del-rio.jpg" alt="Luna del Río, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Noria_Luna_del_R%C3%ADo_Malec%C3%B3n_Barranquilla_2026-06-20.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
-              </figure>
+              <div class="place__media place-gallery">
+                <div class="place-gallery__track">
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/luna-1.jpg" alt="Luna del Río Ferris wheel on the Gran Malecón" width="675" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Noria_Luna_del_R%C3%ADo_Malec%C3%B3n_Barranquilla_2026-06-20.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                </div>
+              </div>
               <div class="place__body">
                 <h3 class="place__name">Luna del Río</h3>
                 <p class="place__desc">The Gran Malecón’s Ferris wheel: 44 air-conditioned cabins with panoramic views of the river and the city.</p>
@@ -801,10 +827,25 @@
               </div>
             </article>
             <article class="place">
-              <figure class="place__media">
-                <img src="../public/img/barranquilla/ventana-de-campeones.jpg" alt="Ventana de Campeones, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_de_Campeones.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
-              </figure>
+              <div class="place__media place-gallery" data-place-gallery>
+                <div class="place-gallery__track" data-place-track tabindex="0" role="region" aria-label="Photos of Ventana de Campeones">
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/campeones-1.jpg" alt="Ventana de Campeones lit in blue at sunset" width="675" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Iluminaci%C3%B3n_azul_Ventana_de_Campeones_Barranquilla_2026-07-30.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/campeones-2.jpg" alt="Ventana de Campeones lit in red at sunset" width="675" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Iluminaci%C3%B3n_roja_Ventana_de_Campeones_Barranquilla_2026-07-30.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/campeones-3.jpg" alt="Ventana de Campeones glass monument" width="599" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_de_Campeones.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                </div>
+                <button class="place-gallery__btn place-gallery__btn--prev" type="button" data-place-prev aria-label="Previous photo" disabled><svg class="icon" aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                <button class="place-gallery__btn place-gallery__btn--next" type="button" data-place-next aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+                <span class="place-gallery__count" aria-hidden="true" data-place-count>1 / 3</span>
+              </div>
               <div class="place__body">
                 <h3 class="place__name">Ventana de Campeones</h3>
                 <p class="place__desc">Known as “the Shark Fin”: a glass monument about 33 meters tall that pays tribute to Junior de Barranquilla, the city’s soccer club.</p>
@@ -813,10 +854,25 @@
               </div>
             </article>
             <article class="place">
-              <figure class="place__media">
-                <img src="../public/img/barranquilla/ventana-al-mundo.jpg" alt="Ventana al Mundo, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_al_Mundo.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
-              </figure>
+              <div class="place__media place-gallery" data-place-gallery>
+                <div class="place-gallery__track" data-place-track tabindex="0" role="region" aria-label="Photos of Ventana al Mundo">
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/ventana-1.jpg" alt="Ventana al Mundo under a blue sky" width="505" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_al_mundo.jpg" target="_blank" rel="noopener">Purrego</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/ventana-2.jpg" alt="Ventana al Mundo lit up at night" width="675" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:HitoVentana1.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/ventana-3.jpg" alt="Detail of the colors of Ventana al Mundo" width="505" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ventana_al_Mundo.jpg" target="_blank" rel="noopener">IAmJesusDavid</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                </div>
+                <button class="place-gallery__btn place-gallery__btn--prev" type="button" data-place-prev aria-label="Previous photo" disabled><svg class="icon" aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                <button class="place-gallery__btn place-gallery__btn--next" type="button" data-place-next aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+                <span class="place-gallery__count" aria-hidden="true" data-place-count>1 / 3</span>
+              </div>
               <div class="place__body">
                 <h3 class="place__name">Ventana al Mundo</h3>
                 <p class="place__desc">A colorful city icon, unveiled for the 2018 Central American and Caribbean Games.</p>
@@ -825,10 +881,29 @@
               </div>
             </article>
             <article class="place">
-              <figure class="place__media">
-                <img src="../public/img/barranquilla/museo-del-carnaval.jpg" alt="Museo del Carnaval, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Museo_del_carnaval_de_Barranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
-              </figure>
+              <div class="place__media place-gallery" data-place-gallery>
+                <div class="place-gallery__track" data-place-track tabindex="0" role="region" aria-label="Photos of Museo del Carnaval">
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/carnaval-1.jpg" alt="Facade of the Barranquilla Carnival Museum" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Museo_del_carnaval_de_Barranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/carnaval-2.jpg" alt="Carnival Museum at sunset" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Museo_carnaval_de_Barranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/carnaval-3.jpg" alt="Casa del Carnaval, next to the museum" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Casa_del_Carnaval_Barranquilla_2024-08-17.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/carnaval-4.jpg" alt="Carnival figures inside the Casa del Carnaval" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Barranquilla_interior_casa_del_carnaval.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener license">CC BY 3.0</a></figcaption>
+                  </figure>
+                </div>
+                <button class="place-gallery__btn place-gallery__btn--prev" type="button" data-place-prev aria-label="Previous photo" disabled><svg class="icon" aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                <button class="place-gallery__btn place-gallery__btn--next" type="button" data-place-next aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+                <span class="place-gallery__count" aria-hidden="true" data-place-count>1 / 4</span>
+              </div>
               <div class="place__body">
                 <h3 class="place__name">Museo del Carnaval</h3>
                 <p class="place__desc">The history, costumes and characters of the Barranquilla Carnival, recognized by UNESCO as Intangible Cultural Heritage of Humanity.</p>
@@ -837,10 +912,29 @@
               </div>
             </article>
             <article class="place">
-              <figure class="place__media">
-                <img src="../public/img/barranquilla/cienaga-de-mallorquin.jpg" alt="Ecoparque Ciénaga de Mallorquín, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Paisaje_Ci%C3%A9naga_de_Mallorqu%C3%ADn.jpg" target="_blank" rel="noopener">Project5443</a> · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener license">CC0</a></figcaption>
-              </figure>
+              <div class="place__media place-gallery" data-place-gallery>
+                <div class="place-gallery__track" data-place-track tabindex="0" role="region" aria-label="Photos of Ecoparque Ciénaga de Mallorquín">
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/mallorquin-1.jpg" alt="Wooden boardwalk over the Ciénaga de Mallorquín" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:SenderoEstuarioEcoparqueMallorquinBarranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/mallorquin-2.jpg" alt="Ciénaga de Mallorquín landscape with its pier" width="675" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Paisaje_Ci%C3%A9naga_de_Mallorqu%C3%ADn.jpg" target="_blank" rel="noopener">Project5443</a> · <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener license">CC0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/mallorquin-3.jpg" alt="Wooden path through the eco-park mangroves" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:SenderoManglarEcoparqueMallorquinBarranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/mallorquin-4.jpg" alt="Heron among the swamp mangroves" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:FaunaEcoparqueCienagadeMallorquinBarranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                </div>
+                <button class="place-gallery__btn place-gallery__btn--prev" type="button" data-place-prev aria-label="Previous photo" disabled><svg class="icon" aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                <button class="place-gallery__btn place-gallery__btn--next" type="button" data-place-next aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+                <span class="place-gallery__count" aria-hidden="true" data-place-count>1 / 4</span>
+              </div>
               <div class="place__body">
                 <h3 class="place__name">Ecoparque Ciénaga de Mallorquín</h3>
                 <p class="place__desc">Boardwalks over the mangroves and lookout points to spot more than 200 bird species, near Bocas de Ceniza.</p>
@@ -849,10 +943,29 @@
               </div>
             </article>
             <article class="place">
-              <figure class="place__media">
-                <img src="../public/img/barranquilla/museo-del-caribe.jpg" alt="Museo del Caribe, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Facade_of_Museo_del_Caribe_at_Barranquilla_Colombia.jpg" target="_blank" rel="noopener">Oliver H</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
-              </figure>
+              <div class="place__media place-gallery" data-place-gallery>
+                <div class="place-gallery__track" data-place-track tabindex="0" role="region" aria-label="Photos of Museo del Caribe">
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/caribe-1.jpg" alt="Museo del Caribe building in the Parque Cultural del Caribe" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Barranquilla_-_Parque_Cultural_del_Caribe.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener license">CC BY 3.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/caribe-2.jpg" alt="Museo del Caribe surrounded by gardens" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Parque_Cultural_del_Caribe_-_Barranquilla.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener license">CC BY 3.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/caribe-3.jpg" alt="Facade of the Museo del Caribe" width="800" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Facade_of_Museo_del_Caribe_at_Barranquilla_Colombia.jpg" target="_blank" rel="noopener">Oliver H</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/caribe-4.jpg" alt="View of the city from the Parque Cultural del Caribe" width="675" height="900" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Vista_de_la_ciudad_en_el_Parque_Cultural.jpg" target="_blank" rel="noopener">Luisnh1210</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                </div>
+                <button class="place-gallery__btn place-gallery__btn--prev" type="button" data-place-prev aria-label="Previous photo" disabled><svg class="icon" aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                <button class="place-gallery__btn place-gallery__btn--next" type="button" data-place-next aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+                <span class="place-gallery__count" aria-hidden="true" data-place-count>1 / 4</span>
+              </div>
               <div class="place__body">
                 <h3 class="place__name">Museo del Caribe</h3>
                 <p class="place__desc">A journey through the nature, culture and history of Colombia’s Caribbean region, at the Parque Cultural del Caribe.</p>
@@ -861,10 +974,29 @@
               </div>
             </article>
             <article class="place">
-              <figure class="place__media">
-                <img src="../public/img/barranquilla/catedral.jpg" alt="Catedral Metropolitana María Reina, Barranquilla" loading="lazy" decoding="async" />
-                <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Barranquilla_Catedral.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · Public domain</figcaption>
-              </figure>
+              <div class="place__media place-gallery" data-place-gallery>
+                <div class="place-gallery__track" data-place-track tabindex="0" role="region" aria-label="Photos of Catedral Metropolitana María Reina">
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/catedral-1.jpg" alt="Facade of the Metropolitan Cathedral of Mary Queen" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Barranquilla_Catedral.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · Public domain</figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/catedral-2.jpg" alt="Inside the cathedral with its stained glass" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Vista_occidente-oriente_interior_catedral_de_Barranquilla_25-01-2026.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/catedral-3.jpg" alt="Central nave of the cathedral" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Vista_general_del_interior_de_la_catedral_Barranquilla_25-ene-2026.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                  <figure class="place-gallery__slide">
+                    <img src="../public/img/barranquilla/catedral-4.jpg" alt="Upper stained-glass window of the cathedral" width="900" height="675" loading="lazy" decoding="async" />
+                    <figcaption class="place__credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Vitral_superior_frontispicio_catedral_de_Barranquilla_2026-01-26.jpg" target="_blank" rel="noopener">Jdvillalobos</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener license">CC BY-SA 4.0</a></figcaption>
+                  </figure>
+                </div>
+                <button class="place-gallery__btn place-gallery__btn--prev" type="button" data-place-prev aria-label="Previous photo" disabled><svg class="icon" aria-hidden="true"><use href="#i-arrow-left" /></svg></button>
+                <button class="place-gallery__btn place-gallery__btn--next" type="button" data-place-next aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
+                <span class="place-gallery__count" aria-hidden="true" data-place-count>1 / 4</span>
+              </div>
               <div class="place__body">
                 <h3 class="place__name">Catedral Metropolitana María Reina</h3>
                 <p class="place__desc">A modern church with stained-glass windows and the great María Reina mosaic, facing Plaza de la Paz.</p>
@@ -1222,6 +1354,8 @@
           <h2 class="site-footer__title site-footer__title--spaced">Follow us</h2>
           <ul role="list">
             <li><a href="https://www.youtube.com/@Amarilivingsuites" target="_blank" rel="noopener"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-youtube" /></svg>&nbsp;YouTube</a></li>
+            <li><a href="https://www.instagram.com/amari.livingsuites/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram" /></svg>&nbsp;Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61553983423173" target="_blank" rel="noopener"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-facebook" /></svg>&nbsp;Facebook</a></li>
           </ul>
         </nav>
       </div>
@@ -1251,7 +1385,7 @@
     </div>
 
     <script type="module" src="../src/js/intro.js?v=4"></script>
-    <script type="module" src="../src/js/main.js?v=5"></script>
+    <script type="module" src="../src/js/main.js?v=7"></script>
     <script type="module" src="../src/js/motion.js"></script>
   </body>
 </html>

@@ -136,7 +136,7 @@ Contraste medido automáticamente sobre el texto renderizado:
 - Sin fallos reales en el texto de contenido.
 - Los únicos avisos fueron falsos positivos (texto blanco sobre fotografía) y las **iniciales de los avatares** sobre terracota (3,95:1). Son decorativas (`aria-hidden`, el nombre aparece al lado), así que no se cambiaron para respetar la paleta.
 
-**Carrusel del inicio (WCAG 2.2.2, «Pausar, detener, ocultar»):** resuelto. Hay un botón discreto de pausa/reanudar, arriba a la derecha del hero, alineado con el encabezado. Detiene a la vez el cambio de fotos y el movimiento de cámara, y anuncia su estado (`aria-pressed`, etiqueta en ES/EN). Con `prefers-reduced-motion` el carrusel ya está detenido y el botón no se muestra. El botón lo crea JavaScript, porque sin JS no tendría función.
+**Riesgo que asume el cliente (WCAG 2.2.2, «Pausar, detener, ocultar»):** el carrusel del inicio no tiene botón de pausa, por decisión expresa del cliente (se probó y se retiró a su pedido el 18-oct-2026). Se mitiga respetando `prefers-reduced-motion`: con esa preferencia el carrusel queda fijo en la primera foto. Para cumplir AA del todo haría falta un control de pausa.
 
 ## 11. Seguridad
 
@@ -224,8 +224,8 @@ Inventario completo: `docs/inventario-imagenes.csv` (80 archivos base).
 | Clase | Significado | Archivos |
 |---|---|---|
 | 1 | Material del cliente (manual de marca) | 3 (logos y favicon) |
-| 2 | Publicado por el hotel en su web oficial; autor o licencia sin documentar | 69 fotos del hotel, más `og-image` e IvyMode |
-| 3 | Tercero con licencia libre verificada y atribución | 8 fotos de Barranquilla (Wikimedia Commons: CC BY-SA 4.0, CC0, dominio público). Ahora con enlace a la licencia |
+| 2 | Publicado por el hotel en su web oficial; autor o licencia sin documentar | 69 fotos del hotel, más `og-image` e IvyMode. También la foto de Selah Bistró & Café tomada de su Instagram (falta su autorización escrita) |
+| 3 | Tercero con licencia libre verificada y atribución | 26 fotos de Barranquilla en galerías por lugar (Wikimedia Commons: CC BY-SA 4.0, CC BY 3.0, CC0, dominio público), cada una con autor, licencia y enlace; datos en `docs/fotos-barranquilla.json`. Además, Karla (OFL) |
 | 4 | Origen desconocido, no usar | 0 |
 
 Acciones:
@@ -234,6 +234,7 @@ Acciones:
 - Confirmar que la licencia de **IvyMode** cubre su uso web en el nuevo hosting. El archivo viene del sitio actual; si no está cubierto, usar el kit de Adobe Fonts del cliente (`config.adobeFontsKitId`).
 - Karla: SIL Open Font License 1.1. Ahora se aloja localmente y su licencia acompaña los archivos (`public/fonts/OFL-Karla.txt`), como pide la OFL.
 - Las dos imágenes de referencia de ChatGPT **no se usan** en el sitio.
+- En Commons no hay fotos con licencia libre del interior del Museo del Caribe; su galería usa fotos del exterior y del Parque Cultural del Caribe. Si el museo autoriza fotos propias, se pueden sumar.
 
 ## 17. Revisión normativa colombiana
 

@@ -1652,3 +1652,26 @@ figure.bento__item figcaption strong {
     gap: var(--space-6);
   }
 }
+
+/* Aliado con fotografía propia (Selah Bistró & Café, versión Full) */
+.ally__visual--photo::before {
+  display: none;
+}
+
+.ally__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 78%;
+  transition: transform 0.8s var(--ease-out, ease);
+}
+
+.ally:hover .ally__photo {
+  transform: scale(1.04);
+}
+
+.ally__visual--photo .ally__badge {
+  z-index: 1;
+}

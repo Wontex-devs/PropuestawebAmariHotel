@@ -947,3 +947,98 @@
     margin: 0 auto;
   }
 }
+
+/* =============================================================
+   Galería por lugar (Conoce Barranquilla): flechas + deslizar
+   ============================================================= */
+.place-gallery__track {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.place-gallery__track::-webkit-scrollbar {
+  display: none;
+}
+
+.place-gallery__track:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -4px;
+}
+
+.place-gallery__slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.place-gallery__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--amari-black);
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    opacity var(--dur-fast),
+    transform var(--dur-fast);
+}
+
+.place-gallery__btn:hover {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.place-gallery__btn .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.place-gallery__btn--prev {
+  left: 0.6rem;
+}
+
+.place-gallery__btn--next {
+  right: 0.6rem;
+}
+
+.place-gallery__btn:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.place-gallery__count {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 1;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--amari-white);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .place-gallery__track {
+    scroll-behavior: auto;
+  }
+}

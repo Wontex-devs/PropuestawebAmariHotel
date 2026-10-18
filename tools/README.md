@@ -16,3 +16,9 @@ o los textos de estos scripts; las páginas en inglés se regeneran, no se edita
 - `site_common.py` contiene la CSP y el hash SHA-256 del script en línea del `<head>`.
   Si se modifica ese script, recalcular el hash (ver `AUDITORIA.md`, sección 11).
 - `validate.py <salida.json>` envía cada página al validador W3C (validator.w3.org/nu).
+
+```bash
+python3 tools/build_places.py opcion-1-full     # galerías de «Conoce Barranquilla» desde docs/fotos-barranquilla.json
+```
+
+Para cambiar una foto de Barranquilla: editar `docs/fotos-barranquilla.json` (archivo, autor, licencia, página de Commons y textos alternativos ES/EN), ejecutar `build_places.py` y luego `build_en.py`.

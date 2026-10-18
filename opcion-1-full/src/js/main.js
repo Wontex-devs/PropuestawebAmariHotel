@@ -7,6 +7,15 @@ import { setupConsent } from './consent.js?v=1';
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
+/* Al recargar la página, siempre volver al inicio (sin restaurar el desplazamiento
+   ni saltar a la sección del enlace #… que hubiera en la URL). */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+const navEntry = performance.getEntriesByType('navigation')[0];
+if (navEntry && navEntry.type === 'reload') {
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo(0, 0);
+}
+
 /* Idioma de la página (<html lang>): 'es' o 'en' */
 const LANG = (document.documentElement.lang || 'es').toLowerCase().startsWith('en') ? 'en' : 'es';
 const LOCALE = LANG === 'en' ? 'en-US' : 'es-CO';
@@ -59,14 +68,12 @@ const T = {
     photo: 'Fotografía',
     of: 'de',
     videoTitle: 'Video de Amari Living Suites',
-    reelPause: 'Pausar el carrusel de fotos',
     close: 'Cerrar',
     loading: 'Cargando…',
     legalAccept: 'Acepto los Términos y Condiciones',
     legalRead: 'He leído la Política de Privacidad',
     legalNewTab: 'Abrir en una pestaña nueva',
     legalError: 'No pudimos cargar el documento. Ábrelo en una pestaña nueva con el enlace de abajo.',
-    reelPlay: 'Reanudar el carrusel de fotos',
   },
   en: {
     newTab: 'opens the booking engine in a new tab',
@@ -113,14 +120,12 @@ const T = {
     photo: 'Photo',
     of: 'of',
     videoTitle: 'Amari Living Suites video',
-    reelPause: 'Pause the photo carousel',
     close: 'Close',
     loading: 'Loading…',
     legalAccept: 'I accept the Terms and Conditions',
     legalRead: 'I have read the Privacy Policy',
     legalNewTab: 'Open in a new tab',
     legalError: 'We could not load the document. Open it in a new tab with the link below.',
-    reelPlay: 'Play the photo carousel',
   },
 }[LANG];
 
@@ -511,24 +516,6 @@ function setupHeroReel() {
   // Sin menú contextual ni arrastre sobre el reel (no es un video manipulable)
   $$('.hero-reel').forEach((reel) => reel.addEventListener('contextmenu', (e) => e.preventDefault()));
 
-  // Botón de pausa (WCAG 2.2.2). Se crea aquí porque sin JS no tendría función.
-  $$('.hero-reel').forEach((reel) => {
-    const ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z" /></svg>';
-    const ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" /></svg>';
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'hero-reel-toggle';
-    const render = (paused) => {
-      reel.classList.toggle('is-paused', paused);
-      btn.setAttribute('aria-pressed', String(paused));
-      btn.setAttribute('aria-label', paused ? T.reelPlay : T.reelPause);
-      btn.title = paused ? T.reelPlay : T.reelPause;
-      btn.innerHTML = paused ? ICON_PLAY : ICON_PAUSE;
-    };
-    render(false);
-    btn.addEventListener('click', () => render(!reel.classList.contains('is-paused')));
-    reel.after(btn);
-  });
 }
 
 /* ============================================================
@@ -706,6 +693,36 @@ function setupLegalReader() {
   d.addEventListener('close', () => box && box.focus());
 }
 
+/* ============================================================
+   Galerías de «Conoce Barranquilla»: flechas, contador y deslizar
+   ============================================================ */
+function setupPlaceGalleries() {
+  $$('[data-place-gallery]').forEach((g) => {
+    const track = $('[data-place-track]', g);
+    const prev = $('[data-place-prev]', g);
+    const next = $('[data-place-next]', g);
+    const count = $('[data-place-count]', g);
+    const total = track.children.length;
+    const index = () => Math.round(track.scrollLeft / Math.max(track.clientWidth, 1));
+    const update = () => {
+      const i = Math.min(Math.max(index(), 0), total - 1);
+      prev.disabled = i === 0;
+      next.disabled = i === total - 1;
+      if (count) count.textContent = `${i + 1} / ${total}`;
+    };
+    const go = (d) => track.scrollTo({ left: (index() + d) * track.clientWidth });
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    let t;
+    track.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(update, 60);
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+}
+
 /** Fecha y hora ISO 8601 con la zona de Colombia (UTC−05:00, sin horario de verano). */
 function colombiaTimestamp(d = new Date()) {
   const t = new Date(d.getTime() - 5 * 60 * 60 * 1000).toISOString().slice(0, 19);
@@ -779,4 +796,5 @@ setupHeroReel();
 setupLightbox();
 setupContactForm();
 setupLegalReader();
+setupPlaceGalleries();
 setupConsent({ mapsEmbedUrl: config.contact.mapsEmbedUrl });
