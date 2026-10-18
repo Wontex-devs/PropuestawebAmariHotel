@@ -59,6 +59,8 @@ const T = {
     photo: 'Fotografía',
     of: 'de',
     videoTitle: 'Video de Amari Living Suites',
+    reelPause: 'Pausar el carrusel de fotos',
+    reelPlay: 'Reanudar el carrusel de fotos',
   },
   en: {
     newTab: 'opens the booking engine in a new tab',
@@ -105,6 +107,8 @@ const T = {
     photo: 'Photo',
     of: 'of',
     videoTitle: 'Amari Living Suites video',
+    reelPause: 'Pause the photo carousel',
+    reelPlay: 'Play the photo carousel',
   },
 }[LANG];
 
@@ -494,6 +498,25 @@ function setupHeroReel() {
 
   // Sin menú contextual ni arrastre sobre el reel (no es un video manipulable)
   $$('.hero-reel').forEach((reel) => reel.addEventListener('contextmenu', (e) => e.preventDefault()));
+
+  // Botón de pausa (WCAG 2.2.2). Se crea aquí porque sin JS no tendría función.
+  $$('.hero-reel').forEach((reel) => {
+    const ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z" /></svg>';
+    const ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" /></svg>';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'hero-reel-toggle';
+    const render = (paused) => {
+      reel.classList.toggle('is-paused', paused);
+      btn.setAttribute('aria-pressed', String(paused));
+      btn.setAttribute('aria-label', paused ? T.reelPlay : T.reelPause);
+      btn.title = paused ? T.reelPlay : T.reelPause;
+      btn.innerHTML = paused ? ICON_PLAY : ICON_PAUSE;
+    };
+    render(false);
+    btn.addEventListener('click', () => render(!reel.classList.contains('is-paused')));
+    reel.after(btn);
+  });
 }
 
 /* ============================================================

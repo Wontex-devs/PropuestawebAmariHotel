@@ -136,7 +136,7 @@ Contraste medido automáticamente sobre el texto renderizado:
 - Sin fallos reales en el texto de contenido.
 - Los únicos avisos fueron falsos positivos (texto blanco sobre fotografía) y las **iniciales de los avatares** sobre terracota (3,95:1). Son decorativas (`aria-hidden`, el nombre aparece al lado), así que no se cambiaron para respetar la paleta.
 
-**Riesgo que debe decidir el cliente:** el hero en bucle no tiene botón de pausa, por decisión expresa del cliente. WCAG 2.2.2 («Pausar, detener, ocultar») pide un mecanismo de pausa para el movimiento automático de más de 5 segundos. Hoy se mitiga desactivándolo con `prefers-reduced-motion`. Para cumplir AA del todo haría falta un pequeño control de pausa.
+**Carrusel del inicio (WCAG 2.2.2, «Pausar, detener, ocultar»):** resuelto. Hay un botón discreto de pausa/reanudar, arriba a la derecha del hero, alineado con el encabezado. Detiene a la vez el cambio de fotos y el movimiento de cámara, y anuncia su estado (`aria-pressed`, etiqueta en ES/EN). Con `prefers-reduced-motion` el carrusel ya está detenido y el botón no se muestra. El botón lo crea JavaScript, porque sin JS no tendría función.
 
 ## 11. Seguridad
 
@@ -320,7 +320,6 @@ Analítica (si se decide usarla):
 | Alta | Confirmar los derechos de las fotos y la licencia de IvyMode | Hotel |
 | Media | Cabeceras de seguridad y 301 de URLs antiguas en el hosting de producción | Hosting |
 | Media | Search Console y sitemap (sección 20) | Quien administre el DNS |
-| Media | Decidir si el hero lleva control de pausa (WCAG 2.2.2) | Cliente |
 | Baja | Número de RNT en el pie, número de WhatsApp de la lavandería y tarifas por hora | Hotel |
 | Baja | Registro centralizado de aceptaciones (sección 15) | Hotel → equipo web |
 
