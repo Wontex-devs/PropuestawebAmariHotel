@@ -802,6 +802,7 @@ figure.bento__item figcaption strong {
 
 .work-panel .workspaces__grid {
   grid-template-columns: 1fr 1fr;
+  align-items: stretch;
 }
 
 .work-panel .workspace {
@@ -1093,9 +1094,11 @@ figure.bento__item figcaption strong {
 
 .workspace {
   position: relative;
-  display: grid;
-  justify-items: start;
-  align-content: start;
+  /* Columna flexible: la tarifa se empuja hacia abajo (margin-top: auto),
+     así tarifa y botón quedan alineados en todas las tarjetas */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-4);
   padding: clamp(1.75rem, 3.5vw, 3rem);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -1131,6 +1134,7 @@ figure.bento__item figcaption strong {
 }
 
 .workspace__rate {
+  margin-top: auto;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
