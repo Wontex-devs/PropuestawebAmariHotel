@@ -224,3 +224,11 @@
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
+
+/* Correos y enlaces largos (sin espacios) no deben ensanchar la página en el celular */
+.policy,
+.policies__head,
+.policies__toc {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

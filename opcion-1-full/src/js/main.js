@@ -193,17 +193,9 @@ function hydrateLinks() {
       return;
     }
 
-    // Número no confirmado: no se publica un enlace ficticio.
-    el.removeAttribute('href');
-    el.removeAttribute('target');
-    el.classList.add('is-pending');
-    el.setAttribute('role', 'link');
-    el.setAttribute('aria-disabled', 'true');
-    const label = el.dataset.pendingLabel || T.waPending;
-    const icon = el.querySelector('svg');
-    el.textContent = '';
-    if (icon) el.append(icon);
-    el.append(document.createTextNode(label));
+    // Número no confirmado: no se publica un enlace ficticio ni un botón «por confirmar»;
+    // el botón aparece solo cuando el número se configura en config.js.
+    el.remove();
     console.warn(`[Amari] WhatsApp "${key}" pendiente: configure el número en src/js/config.js`);
   });
 

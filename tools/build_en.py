@@ -257,7 +257,7 @@ T = {
  'Serás dirigido a nuestro motor de reservas seguro (Cloudbeds).': 'You’ll be taken to our secure booking engine (Cloudbeds).',
  'o consulta por WhatsApp': 'or ask on WhatsApp',
  'Cantidad de personas': 'Number of guests',
- 'Selecciona la cantidad': 'Select number of guests',
+ 'Selecciona la cantidad': 'Select how many',
  'Enviar por WhatsApp': 'Send via WhatsApp',
  'Tu mensaje se abre directamente en WhatsApp. Esta página no almacena tus datos.': 'Your message opens directly in WhatsApp. This page does not store your data.',
  # Pie

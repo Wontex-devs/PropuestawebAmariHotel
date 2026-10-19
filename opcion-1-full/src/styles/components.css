@@ -514,3 +514,35 @@ body.menu-open .site-header::after {
     display: none;
   }
 }
+
+/* =============================================================
+   Celulares pequeños (≤ 380 px): botones sin cortes
+   ============================================================= */
+@media (max-width: 380px) {
+  .mobile-bar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .mobile-bar .btn {
+    padding-inline: 0.75rem;
+    letter-spacing: 0;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .booking-form .btn,
+  .quickbar__submit,
+  .contact-form .btn {
+    padding-inline: 1rem;
+    letter-spacing: 0;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* La flecha decorativa sobra cuando el espacio es tan justo */
+  .booking-form .btn .btn__arrow,
+  .quickbar__submit .btn__arrow {
+    display: none;
+  }
+}
