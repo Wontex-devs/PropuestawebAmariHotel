@@ -866,7 +866,7 @@ figure.bento__item figcaption strong {
 }
 
 .work-panel .workspaces__grid {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
 }
 
@@ -884,7 +884,7 @@ figure.bento__item figcaption strong {
   white-space: nowrap;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 900px) {
   .work-panel .workspace .btn,
   .work-panel .workspace__rate {
     white-space: normal;

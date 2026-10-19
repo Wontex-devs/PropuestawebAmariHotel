@@ -271,7 +271,7 @@ def page(d, here, alt_here, wa_href, extra_head_ld=''):
     <link rel="stylesheet" href="{prefix}src/styles/tokens.css?v=2" />
     <link rel="stylesheet" href="{prefix}src/styles/base.css" />
     <link rel="stylesheet" href="{prefix}src/styles/components.css?v=2" />
-    <link rel="stylesheet" href="{prefix}src/styles/sections.css?v=10" />
+    <link rel="stylesheet" href="{prefix}src/styles/sections.css?v=11" />
     <link rel="stylesheet" href="{prefix}src/styles/extras.css?v=10" />
     <link rel="stylesheet" href="{prefix}src/styles/policies.css?v=2" />
     <script type="application/ld+json">
