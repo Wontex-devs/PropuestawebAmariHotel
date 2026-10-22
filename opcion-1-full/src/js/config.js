@@ -65,11 +65,13 @@ export const config = {
       instagram: 'https://www.instagram.com/meetselah/',
     },
     laundry: {
-      /* ⏳ PENDIENTE: nombre comercial real. */
-      name: null,
+      /* ✅ CONFIRMADO por el cliente (21-oct-2026): La Lavandería & Bakery, SOLO la sede Metro
+         (Carrera 42F # 76-41, el mismo edificio de Amari). WhatsApp +57 301 274 2767. */
+      name: 'La Lavandería & Bakery',
       fallbackName: { es: 'Lavandería aliada', en: 'Partner laundry' },
-      /* ⏳ PENDIENTE: WhatsApp oficial de la lavandería. */
-      whatsapp: null,
+      whatsapp: '573012742767',
+      /* ✅ Instagram oficial. Solo se muestra en la versión Full. */
+      instagram: 'https://www.instagram.com/lalavanderia.bakery/',
     },
   },
 
@@ -85,7 +87,7 @@ export const config = {
       restaurant:
         'Hola, soy huésped de Amari Living Suites y quisiera conocer las promociones para huéspedes y los servicios del restaurante-café.',
       laundry:
-        'Hola, soy huésped de Amari Living Suites y quisiera consultar sobre el servicio de lavandería y el beneficio del 10 % de descuento.',
+        'Hola, soy huésped de Amari Living Suites y quisiera consultar sobre el servicio de lavandería en la sede Metro y el beneficio del 10 % de descuento.',
     },
     en: {
       amari:
@@ -97,7 +99,7 @@ export const config = {
       restaurant:
         'Hello, I am a guest at Amari Living Suites and I would like to know about the guest promotions and the restaurant-café services.',
       laundry:
-        'Hello, I am a guest at Amari Living Suites and I would like to ask about the laundry service and the 10% discount.',
+        'Hello, I am a guest at Amari Living Suites and I would like to ask about the laundry service at the Metro branch and the 10% discount.',
     },
   },
 

@@ -121,7 +121,7 @@ El informe completo de SEO, rendimiento, seguridad, privacidad y cumplimiento es
 
 1. **Licencia de IvyMode**: el archivo viene de la propia web del cliente. Conviene confirmar que su licencia web cubre el nuevo sitio.
 2. **Restaurante-café**: ✅ confirmado en la versión Full: **Selah Bistró & Café**, WhatsApp +57 300 427 2643 e Instagram [@meetselah](https://www.instagram.com/meetselah/). Se configura en `opcion-1-full/src/js/config.js`. En la versión Sencilla sigue apareciendo como "Restaurante-café aliado". Si quieres el nombre también ahí, se cambia en su `config.js`.
-3. **Lavandería**: falta su nombre y su WhatsApp, igual que con el restaurante-café.
+3. **Lavandería**: ✅ confirmada en la versión Full: **La Lavandería & Bakery**, solo la sede Metro (Carrera 42F # 76-41, el mismo edificio de Amari), WhatsApp +57 301 274 2767 e Instagram [@lalavanderia.bakery](https://www.instagram.com/lalavanderia.bakery/). En la versión Sencilla sigue como "Lavandería aliada", sin botones.
 4. **Tarifas de cowork y sala de juntas**: no están publicadas. Por ahora se muestra "Consulta la tarifa por hora".
 5. **Fotos del cowork, la sala de juntas, el restaurante y la lavandería**: no existen fotos reales. Esas secciones usan bloques gráficos con los colores de la marca, no fotos de otros lugares.
 6. **Detalles del cowork y la sala de juntas** (capacidad, equipamiento, horarios): no están documentados y no se inventaron.

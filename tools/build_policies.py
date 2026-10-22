@@ -335,7 +335,7 @@ def page(d, here, alt_here, wa_href, extra_head_ld=''):
       </div>
     </footer>
 
-    <script type="module" src="{prefix}src/js/main.js?v=11"></script>
+    <script type="module" src="{prefix}src/js/main.js?v=12"></script>
   </body>
 </html>
 """

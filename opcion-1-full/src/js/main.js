@@ -1,4 +1,4 @@
-import { config } from './config.js?v=3';
+import { config } from './config.js?v=4';
 import { setupConsent } from './consent.js?v=2';
 
 /* ============================================================
